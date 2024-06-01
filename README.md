@@ -1,4 +1,4 @@
-# 5月31日19.2M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接  更新时间 2024-05-31 10:44:43
+# 6月1日21.9M/S|Shadowrocket/SSR/V2ray/Clash免费节点每天更新订阅链接  更新时间 2024-06-01 10:39:13
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashfans.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,19 +9,19 @@
 
 ### Clash订阅链接
 
-- https://clashfans.github.io/uploads/2024/05/0-20240531.yaml
-- https://clashfans.github.io/uploads/2024/05/1-20240531.yaml
-- https://clashfans.github.io/uploads/2024/05/2-20240531.yaml
-- https://clashfans.github.io/uploads/2024/05/3-20240531.yaml
-- https://clashfans.github.io/uploads/2024/05/4-20240531.yml
+- https://clashfans.github.io/uploads/2024/06/0-20240601.yaml
+- https://clashfans.github.io/uploads/2024/06/1-20240601.yaml
+- https://clashfans.github.io/uploads/2024/06/2-20240601.yaml
+- https://clashfans.github.io/uploads/2024/06/3-20240601.yaml
+- https://clashfans.github.io/uploads/2024/06/4-20240601.yml
 
 ### V2ray订阅链接
 
-- https://clashfans.github.io/uploads/2024/05/0-20240531.txt
-- https://clashfans.github.io/uploads/2024/05/1-20240531.txt
-- https://clashfans.github.io/uploads/2024/05/2-20240531.txt
-- https://clashfans.github.io/uploads/2024/05/3-20240531.txt
-- https://clashfans.github.io/uploads/2024/05/4-20240531.txt
+- https://clashfans.github.io/uploads/2024/06/0-20240601.txt
+- https://clashfans.github.io/uploads/2024/06/1-20240601.txt
+- https://clashfans.github.io/uploads/2024/06/2-20240601.txt
+- https://clashfans.github.io/uploads/2024/06/3-20240601.txt
+- https://clashfans.github.io/uploads/2024/06/4-20240601.txt
 
 ## 更多clash节点订阅 ：
 
