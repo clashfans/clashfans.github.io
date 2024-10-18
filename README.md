@@ -1,4 +1,4 @@
-# 10月17日18.4M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新订阅链接，便宜机场推荐  更新时间 2024-10-17 09:46:04
+# 10月18日21.1M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接，便宜机场推荐  更新时间 2024-10-18 09:38:12
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashfans.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,19 +9,19 @@
 
 ### Clash订阅链接
 
-- https://clashfans.github.io/uploads/2024/10/0-20241017.yaml
-- https://clashfans.github.io/uploads/2024/10/1-20241017.yaml
-- https://clashfans.github.io/uploads/2024/10/2-20241017.yaml
-- https://clashfans.github.io/uploads/2024/10/3-20241017.yaml
-- https://clashfans.github.io/uploads/2024/10/4-20241017.yml
+- https://clashfans.github.io/uploads/2024/10/0-20241018.yaml
+- https://clashfans.github.io/uploads/2024/10/1-20241018.yaml
+- https://clashfans.github.io/uploads/2024/10/2-20241018.yaml
+- https://clashfans.github.io/uploads/2024/10/3-20241018.yaml
+- https://clashfans.github.io/uploads/2024/10/4-20241018.yml
 
 ### V2ray订阅链接
 
-- https://clashfans.github.io/uploads/2024/10/0-20241017.txt
-- https://clashfans.github.io/uploads/2024/10/1-20241017.txt
-- https://clashfans.github.io/uploads/2024/10/2-20241017.txt
-- https://clashfans.github.io/uploads/2024/10/3-20241017.txt
-- https://clashfans.github.io/uploads/2024/10/4-20241017.txt
+- https://clashfans.github.io/uploads/2024/10/0-20241018.txt
+- https://clashfans.github.io/uploads/2024/10/1-20241018.txt
+- https://clashfans.github.io/uploads/2024/10/2-20241018.txt
+- https://clashfans.github.io/uploads/2024/10/3-20241018.txt
+- https://clashfans.github.io/uploads/2024/10/4-20241018.txt
 
 ## 更多clash节点订阅 ：
 
