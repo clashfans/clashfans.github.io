@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+       <link rel="canonical" href="https://clashfans.github.io/news/article-25569.htm" />
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="/assets/website/img/clashfans/favicon.ico" type="image/x-icon"/>
+    <!-- site metas -->
+    <title>try、catch、finally、return 执行流程——超详细讲解</title>
+        <meta name="description" content="1、不管有木有出现异常，finally块中代码都会执行； 2、当try和catch中有return时，finally仍然会执行； 3、finally是在return语句执行之后，返回之前执行的（此时并" />
+        <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/responsive.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P01PJ0V63S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P01PJ0V63S');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+       <!-- header section start -->
+    <div class="header_section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="logo">
+                                        <a href="/">Clash Fans</a>
+                                    </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- header section end -->
+      <!-- services section start -->
+      <div class="services_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="services_taital"><span class="about_icon">try、catch、finally、return 执行流程——超详细讲解 </h1>
+                    <p class="nav-box text-center">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</span>
+                    </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- services section end -->
+    <!-- about sectuion start -->
+    <div class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<div id="content_views" class="htmledit_views"> <p> 1、不管有木有出现异常，finally块中代码都会执行；</p> <p>2、当try和catch中有return时，finally仍然会执行；</p> <p>3、finally是在return语句执行之后，返回之前执行的（此时并没有返回运算后的值，而是先把要返回的值保存起来，不管finally中的代码怎么样，返回的值都不会改变，仍然是之前保存的值），所以函数返回值是在finally执行前就已经确定了；</p> <p>4、finally中如果包含return，那么程序将在这里返回，而不是try或catch中的return返回，返回值就不是try或catch中保存的返回值了。</p> <p>注意：<br /> finally修改的基本类型是不影响返回结果的。（传值的）<br /> 修改list ,map,自定义类等引用类型时，是影响返回结果的。（传址的）对象也是传址的<br /> 但是date类型经过测试是不影响的。有点奇怪。</p> <p>举例：<br /> 情况1： try{} catch(){}finally{} return;<br /> 显然程序按顺序执行。</p> <p>情况2: try{ return; }catch(){} finally{} return;</p> <p>先执行try块中return 语句（包括return语句中的表达式运算），但不返回；<br /> 执行finally语句中全部代码<br /> 最后执行try中return 返回<br /> finally块之后的语句return不执行，因为程序在try中已经return。<br /> 情况3: try{ } catch(){return;} finally{} return;<br /> 1、程序先执行try，如果遇到异常执行catch块，</p> <p>有异常：<br /> 执行catch中return语句，但不返回<br /> 执行finally语句中全部代码，<br /> 最后执行catch块中return返回。 finally块后的return语句不再执行。<br /> 无异常：执行完try再finally再return…<br /> 情况4: try{ return; }catch(){} finally{return;}</p> <p>执行try块return语句（包括return语句中的表达式运算），但不返回；<br /> 再执行finally块，<br /> 执行finally块，有return，从这里返回。<br /> 此时finally块的return值，就是代码执行完后的值</p> <p>情况5: try{} catch(){return;}finally{return;}</p> <p>程序执行catch块中return语句（包括return语句中的表达式运算），但不返回；<br /> 再执行finally块，<br /> 执行finally块，有return，从这里返回。<br /> 情况6: try{ return;}catch(){return;} finally{return;}<br /> 1、程序执行try块中return语句（包括return语句中的表达式运算），但不返回；</p> <p>有异常：</p> <p>执行catch块中return语句（包括return语句中的表达式运算），但不返回；<br /> 再执行finally块<br /> 执行finally块，有return，从这里返回。<br /> 无异常：</p> <p>再执行finally块</p> <p>执行finally块，有return，从这里返回。。</p> <p>最终结论：</p> <p>任何执行try 或者catch中的return语句之后，在返回之前，如果finally存在的话，都会先执行finally语句，<br /> 如果finally中有return语句，那么程序就return了，所以finally中的return是一定会被return的，<br /> 编译器把finally中的return实现为一个warning。</p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-25103.htm">宠物主粮品牌消费排行榜（高端宠物粮食）</a></p>
+                                        <p>下一个：<a href="/news/article-25570.htm">和田宠物医院电话 和田宠物医院电话号码</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-12-node-share.htm" title="10月12日21.2M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接">10月12日21.2M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-5-free-ssr-subscribe.htm" title="6月5日20.5M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接">6月5日20.5M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-5-9-free-ssr-subscribe.htm" title="5月9日22.8M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接">5月9日22.8M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-clash-v2ray-ss-ssr.htm" title="11月16日22M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，便宜机场推荐">11月16日22M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-5-31-free-node-subscribe-links.htm" title="5月31日19M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接">5月31日19M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-23702.htm" title="Spring 5 中文解析数据存储篇-JDBC数据存储(下)">Spring 5 中文解析数据存储篇-JDBC数据存储(下)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-free-ssr-node.htm" title="11月12日22.6M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接，便宜机场推荐">11月12日22.6M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-5-15-free-subscribe-node.htm" title="5月15日21.8M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接">5月15日21.8M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-27-free-node-subscribe.htm" title="9月27日21.2M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接">9月27日21.2M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-11-clash-node.htm" title="10月11日21.4M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接">10月11日21.4M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">42</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+               </div>
+            </div>
+        </div>
+    </div>
+    <!-- about sectuion end -->
+        <!-- copyright section start -->
+    <div class="copyright_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="copyright_text">
+                        ClashFans官网订阅站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- copyright section end -->
+    <!-- Javascript files-->
+    <script src="/assets/website/js/frontend/clashfans/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/jquery-3.0.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/plugin.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
