@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+       <link rel="canonical" href="https://clashfans.github.io/news/article-26041.htm" />
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="/assets/website/img/clashfans/favicon.ico" type="image/x-icon"/>
+    <!-- site metas -->
+    <title>vue中动态控制btn的disabled属性方式_vue.js</title>
+        <meta name="description" content="目录  动态控制btn的disabled属性  场景  动态改变:disabled的属性值  首先 然后 接着     动态控制btn的disabled属性  场景 当ajax请求回来的数据为空时，b" />
+        <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/responsive.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P01PJ0V63S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P01PJ0V63S');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+       <!-- header section start -->
+    <div class="header_section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="logo">
+                                        <a href="/">Clash Fans</a>
+                                    </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- header section end -->
+      <!-- services section start -->
+      <div class="services_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="services_taital"><span class="about_icon">vue中动态控制btn的disabled属性方式_vue.js </h1>
+                    <p class="nav-box text-center">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</span>
+                    </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- services section end -->
+    <!-- about sectuion start -->
+    <div class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                      				  				  				<div id="navCategory"> <h5 class="catalogue">目录</h5> <ul class="first_class_ul"> <li><a href="#_label0" rel="nofollow">动态控制btn的disabled属性</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_0_0" rel="nofollow">场景</a></li> </ul> <li><a href="#_label1" rel="nofollow">动态改变:disabled的属性值</a></li> <ul class="second_class_ul"> <li><a href="#_lab2_1_1" rel="nofollow">首先</a></li> <li><a href="#_lab2_1_2" rel="nofollow">然后</a></li> <li><a href="#_lab2_1_3" rel="nofollow">接着</a></li> </ul> </ul> </div> <p class="maodian"><a name="_label0" rel="nofollow"></a></p> <h2>动态控制btn的disabled属性</h2> <p class="maodian"><a name="_lab2_0_0" rel="nofollow"></a></p> <h3>场景</h3> <p>当ajax请求回来的数据为空时，btn为disabled的状态，否则，btn的disabled属性为false</p> <p>代码：</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;button class="iconDivIcon targetBtn" :class="isdisabled?btndisabled:''"  style="width:100px;" @click="changeEnables(0)" :disabled="isdisabledFn"&gt;禁用&lt;/button&gt;    &lt;div id="app"&gt;&lt;button :disabled="isdisabledFn"&gt;测试&lt;/button&gt;&lt;div&gt;    </pre> </div> <p>js中：</p> <div class="ay1code"> <pre class="brush:js;">var app=new Vue({undefined          el:"#app",          data:{undefined                  isDisabl:true          },          computed:{undefined                  isdisabledFn(){undefined                      if(后台传过来的数据!=null){undefined                              return this.isdisabled=false;                      }else{undefined                              return this.isdisabled=true;                      }                  }          }  })</pre> </div> <p class="maodian"><a name="_label1" rel="nofollow"></a></p> <h2>动态改变:disabled的属性值</h2> <p style="text-align:center"><img decoding="async" alt='比如这个，我想要做这个功能：当我在input输入生日后，只能输入一次，输入完成后才修改为none，一开始默认为true：disabled="none"' src="http://img.555519.xyz/uploads3/20220420/ee0fa451e1778416417eb7968f8a10d9.jpg"></p> <p>找了很久，可能没人提这么弱智的问题哭唧唧，所以我自己琢磨了很久，终于啊。。</p> <p class="maodian"><a name="_lab2_1_1" rel="nofollow"></a></p> <h3>首先</h3> <p>先把那个none改为一个可以修改的值，这里我随便起的也叫disabled</p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;date-picker v-model="time1" valueType="format"                       ref="userBirthdayInput"                       id="userBirthday"                       :disabled="disabled"                       placeholder="请输入生日"&gt;&lt;/date-picker&gt;  </pre> </div> <p class="maodian"><a name="_lab2_1_2" rel="nofollow"></a></p> <h3>然后</h3> <p>设置一个属性props，里面设置这disabled的默认值为false，注意：这个props与data同级的，不是在data里面的。</p> <div class="ay1code"> <pre class="brush:js;">export default {      name: "ModifyUserInfo",      props: {        disabled: {          default: false        }      },      data() {        return {          time1: null,          loading: false,          userPhoto: "",        }      }      }  </pre> </div> <p class="maodian"><a name="_lab2_1_3" rel="nofollow"></a></p> <h3>接着</h3> <p>你想在哪把这个值改为true（改这个为不可编辑）就在哪把这只改为：this.disabled=true就可以啦</p> <div class="ay1code"> <pre class="brush:js;">this.disabled = true  </pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-26040.htm">MySQL 索引简介</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-6-25-shadowrocket-node.htm" title="6月25日19.2M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接">6月25日19.2M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-free-subscribe-node.htm" title="11月19日21.8M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐">11月19日21.8M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-15-free-v2ray-subscribe.htm" title="7月15日22.3M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接">7月15日22.3M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-3-17-free-v2ray.htm" title="3月17日18.9M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接">3月17日18.9M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-19122.htm" title="动物医院看病贵吗多少钱一天（动物医院价目表）">动物医院看病贵吗多少钱一天（动物医院价目表）</a></li>
+                        <li class="py-2"><a href="/news/article-19580.htm" title="猫咪3针疫苗一共多少元冬天打几针啊（猫咪3针疫苗一共多少元冬天打几针啊视频）">猫咪3针疫苗一共多少元冬天打几针啊（猫咪3针疫苗一共多少元冬天打几针啊视频）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-5-23-clash-node-daily-updates.htm" title="5月23日22.8M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接">5月23日22.8M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-27-free-node-subscribe.htm" title="8月27日18.9M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接">8月27日18.9M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-9-free-high-speed-nodes.htm" title="4月9日23M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新订阅链接">4月9日23M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-3-16-free-v2ray-subscribe.htm" title="3月16日20.7M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接">3月16日20.7M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+               </div>
+            </div>
+        </div>
+    </div>
+    <!-- about sectuion end -->
+        <!-- copyright section start -->
+    <div class="copyright_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p class="copyright_text">
+                        ClashFans官网订阅站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- copyright section end -->
+    <!-- Javascript files-->
+    <script src="/assets/website/js/frontend/clashfans/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/jquery-3.0.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/plugin.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
