@@ -95,7 +95,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                                      				  				  				<div id="content_views" class="htmledit_views"> <p> 1、不管有木有出现异常，finally块中代码都会执行；</p> <p>2、当try和catch中有return时，finally仍然会执行；</p> <p>3、finally是在return语句执行之后，返回之前执行的（此时并没有返回运算后的值，而是先把要返回的值保存起来，不管finally中的代码怎么样，返回的值都不会改变，仍然是之前保存的值），所以函数返回值是在finally执行前就已经确定了；</p> <p>4、finally中如果包含return，那么程序将在这里返回，而不是try或catch中的return返回，返回值就不是try或catch中保存的返回值了。</p> <p>注意：<br /> finally修改的基本类型是不影响返回结果的。（传值的）<br /> 修改list ,map,自定义类等引用类型时，是影响返回结果的。（传址的）对象也是传址的<br /> 但是date类型经过测试是不影响的。有点奇怪。</p> <p>举例：<br /> 情况1： try{} catch(){}finally{} return;<br /> 显然程序按顺序执行。</p> <p>情况2: try{ return; }catch(){} finally{} return;</p> <p>先执行try块中return 语句（包括return语句中的表达式运算），但不返回；<br /> 执行finally语句中全部代码<br /> 最后执行try中return 返回<br /> finally块之后的语句return不执行，因为程序在try中已经return。<br /> 情况3: try{ } catch(){return;} finally{} return;<br /> 1、程序先执行try，如果遇到异常执行catch块，</p> <p>有异常：<br /> 执行catch中return语句，但不返回<br /> 执行finally语句中全部代码，<br /> 最后执行catch块中return返回。 finally块后的return语句不再执行。<br /> 无异常：执行完try再finally再return…<br /> 情况4: try{ return; }catch(){} finally{return;}</p> <p>执行try块return语句（包括return语句中的表达式运算），但不返回；<br /> 再执行finally块，<br /> 执行finally块，有return，从这里返回。<br /> 此时finally块的return值，就是代码执行完后的值</p> <p>情况5: try{} catch(){return;}finally{return;}</p> <p>程序执行catch块中return语句（包括return语句中的表达式运算），但不返回；<br /> 再执行finally块，<br /> 执行finally块，有return，从这里返回。<br /> 情况6: try{ return;}catch(){return;} finally{return;}<br /> 1、程序执行try块中return语句（包括return语句中的表达式运算），但不返回；</p> <p>有异常：</p> <p>执行catch块中return语句（包括return语句中的表达式运算），但不返回；<br /> 再执行finally块<br /> 执行finally块，有return，从这里返回。<br /> 无异常：</p> <p>再执行finally块</p> <p>执行finally块，有return，从这里返回。。</p> <p>最终结论：</p> <p>任何执行try 或者catch中的return语句之后，在返回之前，如果finally存在的话，都会先执行finally语句，<br /> 如果finally中有return语句，那么程序就return了，所以finally中的return是一定会被return的，<br /> 编译器把finally中的return实现为一个warning。</p> </p></div> 			                <div class="clearfix"></div>
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> <p> 1、不管有木有出现异常，finally块中代码都会执行；</p> <p>2、当try和catch中有return时，finally仍然会执行；</p> <p>3、finally是在return语句执行之后，返回之前执行的（此时并没有返回运算后的值，而是先把要返回的值保存起来，不管finally中的代码怎么样，返回的值都不会改变，仍然是之前保存的值），所以函数返回值是在finally执行前就已经确定了；</p> <p>4、finally中如果包含return，那么程序将在这里返回，而不是try或catch中的return返回，返回值就不是try或catch中保存的返回值了。</p> <p>注意：<br /> finally修改的基本类型是不影响返回结果的。（传值的）<br /> 修改list ,map,自定义类等引用类型时，是影响返回结果的。（传址的）对象也是传址的<br /> 但是date类型经过测试是不影响的。有点奇怪。</p> <p>举例：<br /> 情况1： try{} catch(){}finally{} return;<br /> 显然程序按顺序执行。</p> <p>情况2: try{ return; }catch(){} finally{} return;</p> <p>先执行try块中return 语句（包括return语句中的表达式运算），但不返回；<br /> 执行finally语句中全部代码<br /> 最后执行try中return 返回<br /> finally块之后的语句return不执行，因为程序在try中已经return。<br /> 情况3: try{ } catch(){return;} finally{} return;<br /> 1、程序先执行try，如果遇到异常执行catch块，</p> <p>有异常：<br /> 执行catch中return语句，但不返回<br /> 执行finally语句中全部代码，<br /> 最后执行catch块中return返回。 finally块后的return语句不再执行。<br /> 无异常：执行完try再finally再return…<br /> 情况4: try{ return; }catch(){} finally{return;}</p> <p>执行try块return语句（包括return语句中的表达式运算），但不返回；<br /> 再执行finally块，<br /> 执行finally块，有return，从这里返回。<br /> 此时finally块的return值，就是代码执行完后的值</p> <p>情况5: try{} catch(){return;}finally{return;}</p> <p>程序执行catch块中return语句（包括return语句中的表达式运算），但不返回；<br /> 再执行finally块，<br /> 执行finally块，有return，从这里返回。<br /> 情况6: try{ return;}catch(){return;} finally{return;}<br /> 1、程序执行try块中return语句（包括return语句中的表达式运算），但不返回；</p> <p>有异常：</p> <p>执行catch块中return语句（包括return语句中的表达式运算），但不返回；<br /> 再执行finally块<br /> 执行finally块，有return，从这里返回。<br /> 无异常：</p> <p>再执行finally块</p> <p>执行finally块，有return，从这里返回。。</p> <p>最终结论：</p> <p>任何执行try 或者catch中的return语句之后，在返回之前，如果finally存在的话，都会先执行finally语句，<br /> 如果finally中有return语句，那么程序就return了，所以finally中的return是一定会被return的，<br /> 编译器把finally中的return实现为一个warning。</p> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-25103.htm">宠物主粮品牌消费排行榜（高端宠物粮食）</a></p>
                                         <p>下一个：<a href="/news/article-25570.htm">和田宠物医院电话 和田宠物医院电话号码</a></p>
@@ -108,16 +109,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-5-13-free-v2ray-subscribe.htm" title="5月13日22M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接">5月13日22M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-5-24-free-v2ray-subscribe.htm" title="5月24日21.7M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接">5月24日21.7M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-6-23-free-high-speed-nodes.htm" title="6月23日18.2M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接">6月23日18.2M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-3-12-free-clash.htm" title="3月12日20.4M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接">3月12日20.4M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-18-free-high-speed-nodes.htm" title="7月18日20.3M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接">7月18日20.3M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-1-free-subscribe-node.htm" title="10月1日21.6M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接">10月1日21.6M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-24-shadowrocket-node.htm" title="7月24日21.4M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接">7月24日21.4M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-28-free-ssr-node.htm" title="9月28日18.8M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接">9月28日18.8M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-25-free-clash-subscribe.htm" title="7月25日18.8M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接">7月25日18.8M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-21-clash-v2ray-ss-ssr.htm" title="11月21日22M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐">11月21日22M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-24489.htm" title="猫咪疫苗可以自己打吗安全吗（猫疫苗能自己打吗）">猫咪疫苗可以自己打吗安全吗（猫疫苗能自己打吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-4-free-subscribe-node.htm" title="10月4日20.9M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接">10月4日20.9M/S|V2ray/Shadowrocket/Clash/SSR免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-7-13-free-ssr-subscribe.htm" title="7月13日19.5M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接">7月13日19.5M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-20494.htm" title="宠物医院好评怎么写评语 宠物医院好评怎么写评语大全">宠物医院好评怎么写评语 宠物医院好评怎么写评语大全</a></li>
+                        <li class="py-2"><a href="/news/article-24635.htm" title="宠物美容师培训学校哪家好（宠物美容师培训班哪个学校好）">宠物美容师培训学校哪家好（宠物美容师培训班哪个学校好）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-17-free-node-subscribe.htm" title="10月17日20.5M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接，便宜机场推荐">10月17日20.5M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-3-19-node-share.htm" title="3月19日18.7M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接">3月19日18.7M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-11-shadowrocket-node.htm" title="8月11日20M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接">8月11日20M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-11-clash-node-daily-updates.htm" title="12月11日20.8M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接，便宜机场推荐">12月11日20.8M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-27-free-node-subscribe.htm" title="9月27日21.2M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接">9月27日21.2M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -129,7 +130,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">48</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">56</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
@@ -174,6 +175,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
                     <p class="copyright_text">
                         ClashFans官网订阅站 版权所有
                         <br />
