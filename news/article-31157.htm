@@ -99,6 +99,7 @@
                   				  				  				<div id="content_views" class="htmledit_views"> <div id="cnblogs_post_body" class="blogpost-body"> </h1> <p>&nbsp; &nbsp; &nbsp; 一般来说，网页URL只能使用英文、数字、还有一些特定的字符。根据网络标准<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.ietf.org/rfc/rfc1738.txt"  rel="nofollow">RFC 1738</a>做了硬性规定：</p> <blockquote> <p>只有字母和数字[0-9a-zA-Z]、一些特殊符号"$-_.+!*'(),"[不包括双引号]、以及某些保留字，才可以不经过编码直接用于URL。</p> </blockquote> <p>&nbsp; &nbsp; &nbsp; 所以若URL中包括中文等字符，就必须经过编码后使用，否则传给服务器的request URL就会包含乱码，服务器无法正确识别。</p> <p>&nbsp; &nbsp; &nbsp; 因为RFC 1738没有规定具体的编码方法，而是交给应用程序（浏览器）自己决定，所以导致“URL编码”领域非常混乱。想要了解浏览器多种情况下的编码处理，可以参考阮一峰大神的<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.ruanyifeng.com/blog/2010/02/url_encoding.html"  rel="nofollow">关于URL编码</a>。</p> </h1> <p>&nbsp; &nbsp; &nbsp; 不同的操作系统、不同的浏览器、不同的网页字符集，将导致完全不同的编码结果，为了保证客户端只用一种编码方法向服务器发出请求，可以使用Javascript先对URL编码，然后再向服务器提交，不要给浏览器插手的机会。</p> <p>&nbsp; &nbsp; &nbsp; 编码方法有三种：</p> <p>&nbsp; &nbsp; &nbsp; escape(url)、encodeURL(url)、encodeURLComponent(url) （url为需要编码的URL）</p> <table border="0"> <tbody> <tr> <td style="width:200px;">方法</td> <td>规则</td> <td>特点</td> </tr> <tr> <td> <p>escape（编码）</p> <p>unescape（解码）</p> </td> <td>除了ASCII字母、数字、标点符号"@ * _ + - . /"以外，对其他所有字符进行编码</td> <td>现在已经不提倡使用这种方法了，它不能直接运用与URL编码，它的真正作用是返回一个字符的Unicode编码值</td> </tr> <tr> <td> <p>encodeURI（编码）</p> <p>decodeURI（解码）</p> </td> <td>除了常见的符号以外，对其他一些在网址中有特殊含义的符号"; / ? : @ &amp; = + $ , #"，也不进行编码</td> <td>encodeURI()是Javascript中真正用来对URL编码的函数，它着眼于对整个URL进行编码</td> </tr> <tr> <td> <p>encodeURIComponent（编码）</p> <p>decodeURIComponent解码）</p> </td> <td>在encodeURI()中不被编码的符号"; / ? : @ &amp; = + $ , #"，在encodeURIComponent()中统统会被编码</td> <td>与encodeURI()的区别是，它用于对URL的组成部分进行个别编码，而不用于对整个URL进行编码</td> </tr> </tbody> </table> <p>&nbsp; &nbsp; &nbsp; 举个栗子：</p> <p>&nbsp; &nbsp; &nbsp; 用后两种常用编码方法对该URL：http://www.w3school.com.cn/my first:class/ 进行编码：</p> <ul> <li>encodeURI: encodeURI('http://www.w3school.com.cn/my first:class/') -&gt; http://www.w3school.com.cn/my%20first:class/</li> <li>encodeURIComponent: encodeURIComponent('http://www.w3school.com.cn/my first:class/') -&gt; http%3A%2F%2Fwww.w3school.com.cn%2Fmy%20first%3Aclass%2F</li> </ul> </div> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
                                         <p>上一个：<a href="/news/article-31156.htm">Goland proto文件 File Watch 自动生成</a></p>
+                                        <p>下一个：<a href="/news/article-31669.htm">国内宠物粮上市公司名单（国内宠物粮上市公司名单排名）</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -108,16 +109,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-6-7-node-share.htm" title="6月7日19.7M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接">6月7日19.7M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-4-15-clash-node-daily-updates.htm" title="4月15日18M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接">4月15日18M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-21-free-node-subscribe.htm" title="7月21日20.3M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接">7月21日20.3M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-23243.htm" title="58同城土狗领养（58同城宠物店领养）">58同城土狗领养（58同城宠物店领养）</a></li>
-                        <li class="py-2"><a href="/news/article-27887.htm" title="领养宠物的软件有哪些 领养宠物的软件有哪些免费">领养宠物的软件有哪些 领养宠物的软件有哪些免费</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-4-4-clash-v2ray-ss-ssr.htm" title="4月4日22.3M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接">4月4日22.3M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-7-16-clash-node.htm" title="7月16日22.8M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接">7月16日22.8M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-20-clash-node-daily-updates.htm" title="12月20日21.5M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐">12月20日21.5M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-11-clash-node.htm" title="9月11日18.1M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接">9月11日18.1M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-5-20-free-v2ray-subscribe.htm" title="5月20日19.8M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接">5月20日19.8M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-25-free-subscribe-node.htm" title="11月25日19.1M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐">11月25日19.1M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-23242.htm" title="Prometheus TSDB存储原理">Prometheus TSDB存储原理</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-8-30-free-ssr-subscribe.htm" title="8月30日19.4M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接">8月30日19.4M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-28-free-subscribe-node.htm" title="11月28日22.3M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接，便宜机场推荐">11月28日22.3M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-26-free-shadowrocket-node.htm" title="4月26日18.8M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接">4月26日18.8M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/news/article-28814.htm" title="两个月大猫抓伤渗了一点点血怎么办（两个月大的猫抓伤）">两个月大猫抓伤渗了一点点血怎么办（两个月大的猫抓伤）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-6-21-free-ssr-node.htm" title="6月21日18.6M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接">6月21日18.6M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-30-free-node-subscribe.htm" title="10月30日19.1M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新订阅链接，便宜机场推荐">10月30日19.1M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-4-5-free-ssr-subscribe.htm" title="4月5日21.8M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接">4月5日21.8M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-5-19-free-node-subscribe-links.htm" title="5月19日20.3M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接">5月19日20.3M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接</a></li>
                     </ul>
     </div>
 </div>
@@ -129,7 +130,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">77</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+                <h4><span class="badge" style="float: right;">80</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
