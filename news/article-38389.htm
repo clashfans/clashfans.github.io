@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 
 <head>
-       <link rel="canonical" href="https://clashfans.github.io/news/article-37422.htm" />
+       <link rel="canonical" href="https://clashfans.github.io/news/article-38389.htm" />
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,8 +12,8 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <link rel="icon" href="/assets/website/img/clashfans/favicon.ico" type="image/x-icon"/>
     <!-- site metas -->
-    <title>python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题</title>
-        <meta name="description" content="例如有这么一个查询语句： select * from server where ip in (....) 同时一个存放ip 的列表 ：["1.1.1.1","2.2.2.2","2.2.2.2"] 我" />
+    <title>Task提高异步执行效率技巧_C#教程_</title>
+        <meta name="description" content="async Task 语法糖出来后，异步编程变得非常简单，适合需要耗费较长时间的任务。 有些小伙伴使用后可能会非常疑惑，使用异步和同步，在耗时上几乎没有差别。 下面我们看一个例子，场景是需要调用多个第" />
         <!-- bootstrap css -->
     <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/bootstrap.min.css">
     <!-- style css -->
@@ -81,7 +81,7 @@
          <div class="container">
             <div class="row">
                <div class="col-sm-12">
-                  <h1 class="services_taital"><span class="about_icon">python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题 </h1>
+                  <h1 class="services_taital"><span class="about_icon">Task提高异步执行效率技巧_C#教程_ </h1>
                     <p class="nav-box text-center">
                         <a href="/">首页</a> / <a href="/news/">新闻资讯</span>
                     </p>
@@ -96,10 +96,10 @@
             <div class="row">
                 <div class="col-md-9">
                                     <input type="hidden" id="share-website-info" data-name="" data-url="">
-                  				  				  				<div id="content_views" class="htmledit_views"> <div style="font-size:16px;"> <p align="center"><img decoding="async" src="http://img.555519.xyz/uploads/20221230/152df90ee845ae160e665c6639be1818.jpg" alt="python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题"></p> <p>例如有这么一个查询语句：</p> <p>select * from server where ip in (....)</p> <p>同时一个存放ip 的列表 ：["1.1.1.1","2.2.2.2","2.2.2.2"]</p> <p>我们希望在查询语句的in中放入这个Ip列表，这里我们首先会想到的是用join来对这个列表处理成一个字符串，如下：</p> <p>&gt;&gt;&gt; a=["1.1.1.1","2.2.2.2","2.2.2.2"]</p> <p>&gt;&gt;&gt; ",".join(a)</p> <p>"1.1.1.1,2.2.2.2,2.2.2.2"</p> <p>可以看到，join后的结果并不是我们想要的结果，因为引号的问题。所以我们会想到另外的办法：</p> <p>&gt;&gt;&gt; a=["1.1.1.1","2.2.2.2","2.2.2.2"]</p> <p>&gt;&gt;&gt; ",".join([""%s"" % item for item in a])</p> <p>""1.1.1.1","2.2.2.2","2.2.2.2""</p> <p>同样会有引号的问题，这个时候我们可以通过这个字符串去掉前后的双引号来达到目的。</p> <p>但是，其实我们还有一种更安全更方便的方式，如下：</p> <p>&gt;&gt;&gt; a = ["1.1.1.1","2.2.2.2","3.3.3.3"]</p> <p>&gt;&gt;&gt; select_str = "select * from server where ip in (%s)" % ",".join(["%s"] * len(a))</p> <p>&gt;&gt;&gt; select_str</p> <p>"select * from server where ip in (%s,%s,%s)"</p> <p>这里我们先根据Ip列表的长度来生成对应的参数位置，然后通过MySQLdb模块中的execute函数来执行：</p> <p>cursor.execute(select_str,a)</p> <p>这样子就可以了</p> <p>补充知识：python中pymysql使用in时候的传参方式</p> <p># 注意这里使用in时候传参的方式 {topic_list}这不用加引号，是因为里面需要的值 topic_id是int</p> <p>sql = "select f_topic_id, f_topic_name, f_partition_num, f_replicas_factor, f_cluster_id, f_topic_token, f_log_retention_time, f_created_at, f_created_by, f_modified_at, f_modified_by from tkafka_topic where f_topic_id in ({topic_list});".format(topic_list=topic_list)</p> <p>总结：</p> <p>以前一开始以为传参是看传过来的参数是什么类型来加引号的，int不加引号，str加引号</p> <p>但是今天才知道，看的是里面接收参数的变量需要什么类型来加引号的。</p> <p>以上这篇python 解决mysql where in 对列表(list,,array)问题就是小编分享给大家的全部内容了，希望能给大家一个参考，也希望大家多多支持云海天教程。</p> <p>原文链接：https://blog.csdn.net/u011085172/article/details/79044490</p> </div></div> 			                <div class="clearfix"></div>
+                  				  				  				<p>async Task 语法糖出来后，异步编程变得非常简单，适合需要耗费较长时间的任务。</p> <p>有些小伙伴使用后可能会非常疑惑，使用异步和同步，在耗时上几乎没有差别。</p> <p>下面我们看一个例子，场景是需要调用多个第三方的WebApi，分别是获取名称、年龄、性别，由于网络环境等原因，api响应时间可能会接近1秒</p> <div class="ay1code"> <pre class="brush:csharp;">public async Task Test()  {      var sw = new Stopwatch();      sw.Start();        var userName = await GetUserNameAsync();      var userAge = await GetUserAgeAsync();      var userSex = await GetUserSexAsync();        sw.Stop();      var ts = sw.Elapsed;      Console.WriteLine($"总共耗时：{ts.TotalMilliseconds}ms");  }    private async Task&lt;string&gt; GetUserNameAsync()  {      await Task.Delay(500);      return "小明";  }    private async Task&lt;string&gt; GetUserAgeAsync()  {      await Task.Delay(800);      return "11";  }    private async Task&lt;string&gt; GetUserSexAsync()  {      await Task.Delay(900);      return "11";  }</pre> </div> <p>运行后发现，这个时间2秒多，这用户体验肯定是无法忍受的</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220412/8fb645320e0f15c366442a5622f4ab34.jpg"></p> <p>导致这样结果的原因是每次进行异步调用的时候，都在异步函数前加上了 await ，对于单单这个过程来说，其实相当于同步，等待直到结果返回，每个异步函数都await，时间自然就叠加了，为了解决这个问题，使用一个小技巧，可以将代码改成下面这样</p> <div class="ay1code"> <pre class="brush:csharp;">public async Task Test()  {      var sw = new Stopwatch();      sw.Start();        var userNameTask =  GetUserNameAsync();      var userAgeTask =  GetUserAgeAsync();      var userSexTask =  GetUserSexAsync();        var userName = await userNameTask;      var userAge = await userAgeTask;      var userSex = await userSexTask;        sw.Stop();      var ts = sw.Elapsed;      Console.WriteLine($"总共耗时：{ts.TotalMilliseconds}ms");  }    private async Task&lt;string&gt; GetUserNameAsync()  {      await Task.Delay(500);      return "小明";  }    private async Task&lt;string&gt; GetUserAgeAsync()  {      await Task.Delay(800);      return "11";  }    private async Task&lt;string&gt; GetUserSexAsync()  {      await Task.Delay(900);      return "11";  }</pre> </div> <p>这次运行的总耗时，就是3个异步中，耗时最长那个GetUserSexAsync</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220412/5245e55b5f871be4c53c2b6140e8ff1d.jpg"></p> <p>为什么会这样呢，这个小技巧的关键是这里，当执行到异步函数的时候，不加 await，不进行等待，让这些任务乖乖在别的线程的执行，当需要用到他们的时候，再去等待返回值，所以时间上不会进行叠加，哪个最长，总耗时就是哪个</p> <div class="ay1code"> <pre class="brush:csharp;">var userNameTask =  GetUserNameAsync();  var userAgeTask =  GetUserAgeAsync();  var userSexTask =  GetUserSexAsync();    var userName = await userNameTask;  var userAge = await userAgeTask;  var userSex = await userSexTask;</pre> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-36926.htm">宠物粮生产设备前十名排名 宠物粮生产设备前十名排名榜</a></p>
-                                        <p>下一个：<a href="/news/article-37423.htm">瑞派宠物医院在哪（瑞派宠物医院哪家有眼科专科）</a></p>
+                                        <p>上一个：<a href="/news/article-37891.htm">宠物粮食市场预测分析图 宠物粮食市场预测分析图表</a></p>
+                                        <p>下一个：<a href="/news/article-38390.htm">宠物粮食加工厂加盟条件是什么样的（宠物粮食加工厂需要投资多少钱）</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -109,16 +109,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-32616.htm" title="Android开发基础——Kotlin：标准函数和静态方法">Android开发基础——Kotlin：标准函数和静态方法</a></li>
-                        <li class="py-2"><a href="/news/article-23242.htm" title="Prometheus TSDB存储原理">Prometheus TSDB存储原理</a></li>
-                        <li class="py-2"><a href="/news/article-32138.htm" title="上海宠物医院纪录片（上海宠物医院纪录片是哪个）">上海宠物医院纪录片（上海宠物医院纪录片是哪个）</a></li>
-                        <li class="py-2"><a href="/news/article-33573.htm" title="宠物领养合同怎么写 宠物领养合同怎么写范本">宠物领养合同怎么写 宠物领养合同怎么写范本</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-11-free-ssr-node.htm" title="11月11日21.6M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接，便宜机场推荐">11月11日21.6M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-21-clash-v2ray-ss-ssr.htm" title="11月21日22M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐">11月21日22M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-16-clash-v2ray-ss-ssr.htm" title="11月16日22M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，便宜机场推荐">11月16日22M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/news/article-19581.htm" title="宠物粮食品牌前十名排名（宠物粮生产厂家排名）">宠物粮食品牌前十名排名（宠物粮生产厂家排名）</a></li>
-                        <li class="py-2"><a href="/news/article-27887.htm" title="领养宠物的软件有哪些 领养宠物的软件有哪些免费">领养宠物的软件有哪些 领养宠物的软件有哪些免费</a></li>
-                        <li class="py-2"><a href="/news/article-25569.htm" title="try、catch、finally、return 执行流程——超详细讲解">try、catch、finally、return 执行流程——超详细讲解</a></li>
+                        <li class="py-2"><a href="/news/article-36434.htm" title="动物医院心得体会怎么写啊（动物医院总结）">动物医院心得体会怎么写啊（动物医院总结）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-17-free-node-subscribe.htm" title="10月17日20.5M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接，便宜机场推荐">10月17日20.5M/S|Clash/Shadowrocket/SSR/V2ray免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-22783.htm" title="动物疫苗价格表图片及价格大全集 动物疫苗价格表图片及价格大全集下载">动物疫苗价格表图片及价格大全集 动物疫苗价格表图片及价格大全集下载</a></li>
+                        <li class="py-2"><a href="/news/article-20494.htm" title="宠物医院好评怎么写评语 宠物医院好评怎么写评语大全">宠物医院好评怎么写评语 宠物医院好评怎么写评语大全</a></li>
+                        <li class="py-2"><a href="/news/article-20495.htm" title="宠物寄养政策（宠物寄养须知）">宠物寄养政策（宠物寄养须知）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-20-clash-node.htm" title="10月20日22.7M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，便宜机场推荐">10月20日22.7M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-3-free-node-subscribe.htm" title="12月3日20.7M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接，便宜机场推荐">12月3日20.7M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-26041.htm" title="vue中动态控制btn的disabled属性方式_vue.js">vue中动态控制btn的disabled属性方式_vue.js</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-7-free-clash-subscribe.htm" title="1月7日22M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新链接地址，便宜机场推荐">1月7日22M/S|Shadowrocket/SSR/Clash/V2ray免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-clash-node-daily-updates.htm" title="10月15日18.1M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐">10月15日18.1M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐</a></li>
                     </ul>
     </div>
 </div>
