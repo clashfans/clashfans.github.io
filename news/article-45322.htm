@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+       <link rel="canonical" href="https://clashfans.github.io/news/article-45322.htm" />
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="/assets/website/img/clashfans/favicon.ico" type="image/x-icon"/>
+    <!-- site metas -->
+    <title>clickhouse智能提示编辑器</title>
+        <meta name="description" content="对于经常写sql的人来说智能提示是非常重要的，这个非常影响写sql的效率和心情。 这里说的智能提示不仅仅是关键字（select等）的智能提示，还得要做到表字段的智能提示。 例如： 下面是mysql的智" />
+    
+    <meta name="author" content="ClashFans官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashfans.github.io/news/article-45322.htm" />
+    <meta property="og:site_name" content="ClashFans官网订阅站" />
+    <meta property="og:title" content="clickhouse智能提示编辑器" />
+    <meta property="og:image" content="https://clashfans.github.io/uploads/20240307/f909f5e871122c7978a189c8cfd1029b.webp" />
+        <meta property="og:release_date" content="2025-01-24T09:26:53" />
+    <meta property="og:updated_time" content="2025-01-24T09:26:53" />
+        <meta property="og:description" content="对于经常写sql的人来说智能提示是非常重要的，这个非常影响写sql的效率和心情。 这里说的智能提示不仅仅是关键字（select等）的智能提示，还得要做到表字段的智能提示。 例如： 下面是mysql的智" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="clickhouse智能提示编辑器">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/responsive.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P01PJ0V63S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P01PJ0V63S');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+       <!-- header section start -->
+    <div class="header_section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="logo">
+                                        <a href="/">Clash Fans</a>
+                                    </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- header section end -->
+      <!-- services section start -->
+      <div class="services_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="services_taital"><span class="about_icon">clickhouse智能提示编辑器 </h1>
+                    <p class="nav-box text-center">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</span>
+                    </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- services section end -->
+    <!-- about sectuion start -->
+    <div class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<section id="nice" data-tool="mdnice编辑器" data-website="https://www.mdnice.com"> <p data-tool="mdnice编辑器">对于经常写sql的人来说智能提示是非常重要的，这个非常影响写sql的效率和心情。</p> <p data-tool="mdnice编辑器"><strong>这里说的智能提示不仅仅是关键字（select等）的智能提示，还得要做到表字段的智能提示。</strong></p> <p data-tool="mdnice编辑器">例如： 下面是mysql的智能提示（是利用codemirror做的）</p> <figure data-tool="mdnice编辑器"><img decoding="async" src="https://dimg04.c-ctrip.com/images/0v572120009eg2mxgE90B.png" alt="clickhouse智能提示编辑器"><figcaption>image</figcaption></figure> <p data-tool="mdnice编辑器">上图是我很久以前搞的一个快速开发的后台系统中的一个小工具。</p> <p data-tool="mdnice编辑器">如果大家需要mysql结合db的schema来智能提示的可以去参考下<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/yuzd/AntMgr/wiki"  rel="nofollow">开源AntMgr后台快速开发系统</a></p> <h4 data-tool="mdnice编辑器"><span class="content">clickhouse的智能提示</span></h4> <p data-tool="mdnice编辑器">今天给大家分享ace_editor来封装clickhouse的智能提示。</p> <p data-tool="mdnice编辑器">效果如下：</p> <figure data-tool="mdnice编辑器"><img decoding="async" src="https://dimg04.c-ctrip.com/images/0v50q120009eg4000D3C7.png" alt="clickhouse智能提示编辑器"><figcaption>image</figcaption></figure> <h4 data-tool="mdnice编辑器"><span class="content">使用方法</span></h4> <p data-tool="mdnice编辑器">git clone下代码后打开demo</p> <p data-tool="mdnice编辑器"><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/yuzd/ace_clickhouse"  rel="nofollow">https://github.com/yuzd/ace_clickhouse</a></p> <figure data-tool="mdnice编辑器"><img decoding="async" src="https://dimg04.c-ctrip.com/images/0v55k120009eg3mrxC731.png" alt="clickhouse智能提示编辑器"><figcaption>image</figcaption></figure> <h4 data-tool="mdnice编辑器"><span class="content">ace_clickhouse.js</span></h4> <p data-tool="mdnice编辑器">我把 ace_editor 和 ace_lang_tools 还有关于 clickhouse的基本关键字提示的全都放在这一个js里面了。</p> <p data-tool="mdnice编辑器">打开ace_clickhouse.js 里面有四大部分</p> <ul data-tool="mdnice编辑器"> <li> <section>最上面的ace_editor</section> </li> <li> <section>ace.define("ace/snippets"开头的是ace_lang_tools</section> </li> <li> <section>然后是clickhouse的扩展内容(关键字和clickhouse的函数等)</section> </li> <li> <section>最后一部分是theme</section> </li> </ul> <figure data-tool="mdnice编辑器"><img decoding="async" src="https://dimg04.c-ctrip.com/images/0v567120009eg48ut78AB.png" alt="clickhouse智能提示编辑器"><figcaption>image</figcaption></figure> <p data-tool="mdnice编辑器">有需要你可以拆出来。</p> <p data-tool="mdnice编辑器">注意：我为了使用简单，暴露了一个ace_langTools在window的scope下。方便给下面的js使用（下面会讲到）</p> <h4 data-tool="mdnice编辑器"><span class="content">另外一个js：model-sql.js</span></h4> <p data-tool="mdnice编辑器">这个是做表字段的智能提示的，</p> <pre class="custom" data-tool="mdnice编辑器"><code> window.sqlTablesCompleter&nbsp;=&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;target:&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;database:&nbsp;'log', &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;table:&nbsp;'testdb' &nbsp;&nbsp;&nbsp;&nbsp;}, &nbsp;&nbsp;&nbsp;&nbsp;completerCache:&nbsp;[], &nbsp;&nbsp;&nbsp;&nbsp;getCompletions:&nbsp;function&nbsp;(editor,&nbsp;session,&nbsp;pos,&nbsp;prefix,&nbsp;callback)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;self&nbsp;=&nbsp;this; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;key&nbsp;=&nbsp;self.target.database&nbsp;+&nbsp;'.'&nbsp;+&nbsp;self.target.table; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(self.completerCache[key])&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callback(null,&nbsp;self.completerCache[key]); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;sql&nbsp;=&nbsp;self.buildExploreQuery("COLUMNS"); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self._post(sql,&nbsp;function&nbsp;(response)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.completerCache[key]&nbsp;=&nbsp;response.data.map(function&nbsp;(item)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;caption:&nbsp;item.text, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value:&nbsp;item.text, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;meta:&nbsp;key, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;docHTML:&nbsp;self._convertToHTML(item), &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callback(null,&nbsp;self.completerCache[key]); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}); &nbsp;&nbsp;&nbsp;&nbsp;}, &nbsp;&nbsp;&nbsp;&nbsp;_convertToHTML:&nbsp;function&nbsp;(item)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;desc&nbsp;=&nbsp;item.value,&nbsp;space_index&nbsp;=&nbsp;0,&nbsp;start&nbsp;=&nbsp;0,&nbsp;line&nbsp;=&nbsp;"",&nbsp;next_line_end&nbsp;=&nbsp;60,&nbsp;lines&nbsp;=&nbsp;[]; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;desc.length;&nbsp;i++)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(desc[i]&nbsp;===&nbsp;'&nbsp;')&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;space_index&nbsp;=&nbsp;i; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;if&nbsp;(i&nbsp;&gt;=&nbsp;next_line_end&nbsp;&amp;&amp;&nbsp;space_index&nbsp;!==&nbsp;0)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line&nbsp;=&nbsp;desc.slice(start,&nbsp;space_index); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lines.push(line); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start&nbsp;=&nbsp;space_index&nbsp;+&nbsp;1; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;next_line_end&nbsp;=&nbsp;i&nbsp;+&nbsp;60; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;space_index&nbsp;=&nbsp;0; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;line&nbsp;=&nbsp;desc.slice(start); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lines.push(line); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;["&lt;b&gt;",&nbsp;item.text,&nbsp;"&lt;/b&gt;",&nbsp;"&lt;hr&gt;&lt;/hr&gt;",&nbsp;lines.join("&amp;nbsp&lt;br&gt;")].join(""); &nbsp;&nbsp;&nbsp;&nbsp;}, &nbsp;&nbsp;&nbsp;&nbsp;_post:&nbsp;function&nbsp;(sql,&nbsp;callback)&nbsp;{ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//这里需要改造成去请求表的schema的数据，接口的返回格式如下所示&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callback(JSON.parse("{\n"&nbsp;+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;\"data\":&nbsp;[\n"&nbsp;+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{\n"&nbsp;+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"text\":&nbsp;\"field1\",\n"&nbsp;+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\":&nbsp;\"DateTime\"\n"&nbsp;+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},\n"&nbsp;+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{\n"&nbsp;+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"text\":&nbsp;\"field2\",\n"&nbsp;+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\":&nbsp;\"String\"\n"&nbsp;+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}\n"&nbsp;+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;&nbsp;&nbsp;&nbsp;]\n"&nbsp;+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"}")); &nbsp;&nbsp;&nbsp;&nbsp;} };</code></pre> <p data-tool="mdnice编辑器">如上面代码里面的注释一样，你需要调用一个接口去获取你需要智能提示的clickhouse的表的字段信息</p> <p data-tool="mdnice编辑器">然后在去把这个智能提示注册到ace_editor里面去</p> <pre class="custom" data-tool="mdnice编辑器"><code> winwo.ace_langTools.addCompleter(sqlTablesCompleter);</code></pre> <p data-tool="mdnice编辑器">这样就搞定了</p> <p data-tool="mdnice编辑器">如果有哪些clickhouse的函数没有提示的，可以把函数提示内容添加到第一个js文件里面的</p> <p data-tool="mdnice编辑器">ace.define("ace/mode/clickhouse_info" 代码块中Funcs 和 FunctionsCompletions</p> <p data-tool="mdnice编辑器">照葫芦画瓢即可！</p> </section> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-44840.htm">VUE项目解决Vant组件库样式修改不生效问题</a></p>
+                                        <p>下一个：<a href="/news/article-45323.htm">宠物粮加工厂加盟费多少（宠物粮加工厂加盟费多少）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-23-free-ssr-node.htm" title="1月23日21.4M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新链接地址，便宜机场推荐">1月23日21.4M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-19121.htm" title="井字棋 C++">井字棋 C++</a></li>
+                        <li class="py-2"><a href="/news/article-37422.htm" title="python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题">python 列表 mysql in_python 解决mysql where in 对列表(list,,array)问题</a></li>
+                        <li class="py-2"><a href="/news/article-24489.htm" title="猫咪疫苗可以自己打吗安全吗（猫疫苗能自己打吗）">猫咪疫苗可以自己打吗安全吗（猫疫苗能自己打吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-2-free-node-subscribe-links.htm" title="11月2日21M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接，便宜机场推荐">11月2日21M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-21-free-node-subscribe-links.htm" title="10月21日20.4M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接，便宜机场推荐">10月21日20.4M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-34531.htm" title="适合穷养的狗有哪些（适合穷养的狗有哪些品种图片）">适合穷养的狗有哪些（适合穷养的狗有哪些品种图片）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-29-free-v2ray.htm" title="11月29日20.1M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐">11月29日20.1M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-2-free-node-subscribe-links.htm" title="12月2日21.3M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，便宜机场推荐">12月2日21.3M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-25-free-subscribe-node.htm" title="11月25日19.1M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐">11月25日19.1M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+               </div>
+            </div>
+        </div>
+    </div>
+    <!-- about sectuion end -->
+        <!-- copyright section start -->
+    <div class="copyright_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="copyright_text">
+                        ClashFans官网订阅站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- copyright section end -->
+    <!-- Javascript files-->
+    <script src="/assets/website/js/frontend/clashfans/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/jquery-3.0.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/plugin.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
