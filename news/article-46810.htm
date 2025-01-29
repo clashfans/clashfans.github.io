@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+       <link rel="canonical" href="https://clashfans.github.io/news/article-46810.htm" />
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="/assets/website/img/clashfans/favicon.ico" type="image/x-icon"/>
+    <!-- site metas -->
+    <title>js下拉选框的二级三级联动</title>
+        <meta name="description" content="下拉选框的二级三级联动 所谓二级联动，就是要通过一个下拉列表的选择从而在另一个select下拉列表中显示出对应的数据。例如：两个下拉列表，第一列表是选择省份，第二个列表则显示该省份的城市。 如下图： " />
+    
+    <meta name="author" content="ClashFans官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashfans.github.io/news/article-46810.htm" />
+    <meta property="og:site_name" content="ClashFans官网订阅站" />
+    <meta property="og:title" content="js下拉选框的二级三级联动" />
+    <meta property="og:image" content="https://clashfans.github.io/uploads/20240307/729c7362dc804f1775b45fefafb51f1e.webp" />
+        <meta property="og:release_date" content="2025-01-27T08:17:39" />
+    <meta property="og:updated_time" content="2025-01-27T08:17:39" />
+        <meta property="og:description" content="下拉选框的二级三级联动 所谓二级联动，就是要通过一个下拉列表的选择从而在另一个select下拉列表中显示出对应的数据。例如：两个下拉列表，第一列表是选择省份，第二个列表则显示该省份的城市。 如下图： " />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="js下拉选框的二级三级联动">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/responsive.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P01PJ0V63S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P01PJ0V63S');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+       <!-- header section start -->
+    <div class="header_section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="logo">
+                                        <a href="/">Clash Fans</a>
+                                    </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="#">关于</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">联系</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- header section end -->
+      <!-- services section start -->
+      <div class="services_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="services_taital"><span class="about_icon">js下拉选框的二级三级联动 </h1>
+                    <p class="nav-box text-center">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</span>
+                    </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- services section end -->
+    <!-- about sectuion start -->
+    <div class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2><a id="_0" rel="nofollow"></a>下拉选框的二级三级联动</h2> <p>所谓二级联动，就是要通过一个下拉列表的选择从而在另一个select下拉列表中显示出对应的数据。例如：两个下拉列表，第一列表是选择省份，第二个列表则显示该省份的城市。<br /> 如下图：<img decoding="async" src="http://img.555519.xyz/uploads3/20220901/ebdd4de2634a8818cb5f25708af486c7.jpg" alt="js下拉选框的二级三级联动"><br /> 我选择湖北省则出现湖北省个各个市级地区名：<br /><img decoding="async" src="http://img.555519.xyz/uploads3/20220901/e3d26afedb90766b421d0443cc408e1f.jpg" alt="js下拉选框的二级三级联动"></p> <p>具体代码如下：</p> <pre><code class="prism language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!-- 创建三个下拉选框 --&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span><span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>slt1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span><span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>slt2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>select</span><span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>slt3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>select</span><span class="token punctuation">&gt;</span></span><span class="token comment">&lt;!-- 引入外部js文件（各个地区名文件） --&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>./area-json.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript"><span class="token comment">// 获取三个下拉框</span><span class="token keyword">var</span> province<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'slt1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">var</span> city<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'slt2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">var</span> district<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'slt3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 将各地区添加到 下拉框option标签中</span>     data<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> opt<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'option'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>              province<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>opt<span class="token punctuation">)</span><span class="token punctuation">;</span>              opt<span class="token punctuation">.</span>innerText<span class="token operator">=</span> item<span class="token punctuation">.</span>name<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 创建一个变量接收省的全部名称</span><span class="token keyword">var</span> sheng<span class="token punctuation">;</span><span class="token comment">// 二级联动</span><span class="token comment">// 给第一个框添加onchange事件</span>     province<span class="token punctuation">.</span><span class="token function-variable function">onchange</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 遍历外部js文件 里面的data对象</span><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span><span class="token keyword">get</span><span class="token keyword">in</span> data<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 判断框里面的值是否等于data里面的省份名</span><span class="token keyword">if</span><span class="token punctuation">(</span>province<span class="token punctuation">.</span>value<span class="token operator">==</span> data<span class="token punctuation">[</span><span class="token keyword">get</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">// 将data[get]付给sheng</span>                     sheng<span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token keyword">get</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">// 将第二个框的内容清空</span>                     city<span class="token punctuation">.</span>innerHTML<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">;</span>                     data<span class="token punctuation">[</span><span class="token keyword">get</span><span class="token punctuation">]</span><span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> opt<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'option'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                         city<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>opt<span class="token punctuation">)</span><span class="token punctuation">;</span>                         opt<span class="token punctuation">.</span>innerText<span class="token operator">=</span> item<span class="token punctuation">.</span>name<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token comment">// 三级联动</span> 		          city<span class="token punctuation">.</span><span class="token function-variable function">onchange</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span><span class="token keyword">get</span><span class="token keyword">in</span> sheng<span class="token punctuation">.</span>children<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                             console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">[</span><span class="token keyword">get</span><span class="token punctuation">]</span><span class="token punctuation">.</span>children<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token keyword">if</span><span class="token punctuation">(</span>city<span class="token punctuation">.</span>value<span class="token operator">==</span> sheng<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token keyword">get</span><span class="token punctuation">]</span><span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                                 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                                district<span class="token punctuation">.</span>innerHTML<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">;</span>                                  sheng<span class="token punctuation">.</span>children<span class="token punctuation">[</span><span class="token keyword">get</span><span class="token punctuation">]</span><span class="token punctuation">.</span>children<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">var</span> opt<span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'option'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                                     district<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>opt<span class="token punctuation">)</span><span class="token punctuation">;</span>                                     opt<span class="token punctuation">.</span>innerText<span class="token operator">=</span> item<span class="token punctuation">.</span>name<span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span></code></pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-46324.htm">南京领养狗 南京领养狗狗的地方</a></p>
+                                        <p>下一个：<a href="/news/article-46811.htm">KCP协议：从TCP到UDP家族QUIC/KCP/ENET</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-10-29-free-shadowrocket-node.htm" title="10月29日22M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐">10月29日22M/S|SSR/V2ray/Clash/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-7-free-ssr-node.htm" title="12月7日19.3M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接，便宜机场推荐">12月7日19.3M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-31157.htm" title="URL编码及解码">URL编码及解码</a></li>
+                        <li class="py-2"><a href="/news/article-19581.htm" title="宠物粮食品牌前十名排名（宠物粮生产厂家排名）">宠物粮食品牌前十名排名（宠物粮生产厂家排名）</a></li>
+                        <li class="py-2"><a href="/news/article-26503.htm" title="家猫为什么不建议打疫苗针呢（家猫为什么不建议打疫苗针呢）">家猫为什么不建议打疫苗针呢（家猫为什么不建议打疫苗针呢）</a></li>
+                        <li class="py-2"><a href="/news/article-37891.htm" title="宠物粮食市场预测分析图 宠物粮食市场预测分析图表">宠物粮食市场预测分析图 宠物粮食市场预测分析图表</a></li>
+                        <li class="py-2"><a href="/news/article-40852.htm" title="常州宠颐生动物医院招聘电话（常州宠颐生美多格动物医院）">常州宠颐生动物医院招聘电话（常州宠颐生美多格动物医院）</a></li>
+                        <li class="py-2"><a href="/news/article-34530.htm" title="2021国考公务员报名人数统计（2021年国考公务员人数）">2021国考公务员报名人数统计（2021年国考公务员人数）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-9-free-clash.htm" title="12月9日19.6M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，便宜机场推荐">12月9日19.6M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-32139.htm" title="动物打完疫苗可以洗澡吗冬天（动物打完疫苗可以洗澡吗冬天会感冒吗）">动物打完疫苗可以洗澡吗冬天（动物打完疫苗可以洗澡吗冬天会感冒吗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">87</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">92</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+               </div>
+            </div>
+        </div>
+    </div>
+    <!-- about sectuion end -->
+        <!-- copyright section start -->
+    <div class="copyright_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="copyright_text">
+                        ClashFans官网订阅站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- copyright section end -->
+    <!-- Javascript files-->
+    <script src="/assets/website/js/frontend/clashfans/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/jquery-3.0.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/plugin.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
