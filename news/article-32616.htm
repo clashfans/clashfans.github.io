@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html xml:lang="zh-CN" lang="zh-CN">
 
 <head>
        <link rel="canonical" href="https://clashfans.github.io/news/article-32616.htm" />
@@ -14,7 +14,36 @@
     <!-- site metas -->
     <title>Android开发基础——Kotlin：标准函数和静态方法</title>
         <meta name="description" content="标准函数with/run/apply Kotlin中的标准函数指的是Standard.kt文件中定义的函数，任何Kotlin代码都可以自由调用所有的标准函数。 之前提到let函数，该函数主要作用是配合" />
-        <!-- bootstrap css -->
+    
+    <meta name="author" content="ClashFans官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashfans.github.io/news/article-32616.htm" />
+    <meta property="og:site_name" content="ClashFans官网订阅站" />
+    <meta property="og:title" content="Android开发基础——Kotlin：标准函数和静态方法" />
+    <meta property="og:image" content="https://clashfans.github.io/uploads/20240307/2a16ac6fb2fad5fccce38e554eebe215.webp" />
+        <meta property="og:release_date" content="2024-12-29T05:24:01" />
+    <meta property="og:updated_time" content="2024-12-29T05:24:01" />
+        <meta property="og:description" content="标准函数with/run/apply Kotlin中的标准函数指的是Standard.kt文件中定义的函数，任何Kotlin代码都可以自由调用所有的标准函数。 之前提到let函数，该函数主要作用是配合" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Android开发基础——Kotlin：标准函数和静态方法">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <!-- bootstrap css -->
     <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/bootstrap.min.css">
     <!-- style css -->
     <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/style.css">
@@ -109,16 +138,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-24634.htm" title="MySQL分组统计-每组各个条件信息条数">MySQL分组统计-每组各个条件信息条数</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-26-free-v2ray-subscribe.htm" title="10月26日20.8M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐">10月26日20.8M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-4-19-free-high-speed-nodes.htm" title="4月19日19.9M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接">4月19日19.9M/S|Shadowrocket/Clash/V2ray/SSR免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-5-16-free-v2ray-subscribe.htm" title="5月16日18.4M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新订阅链接">5月16日18.4M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-10-free-ssr-node.htm" title="10月10日21.8M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接">10月10日21.8M/S|Shadowrocket/Clash/SSR/V2ray免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-6-22-free-clash-subscribe.htm" title="6月22日18.1M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接">6月22日18.1M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-8-19-clash-node.htm" title="8月19日18.9M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接">8月19日18.9M/S|Clash/V2ray/Shadowrocket/SSR免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-3-free-node-subscribe.htm" title="9月3日23M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新订阅链接">9月3日23M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-6-5-free-ssr-subscribe.htm" title="6月5日20.5M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接">6月5日20.5M/S|V2ray/SSR/Clash/Shadowrocket免费节点每天更新订阅链接</a></li>
-                        <li class="py-2"><a href="/news/article-20952.htm" title="git下载、安装、配置与简单应用">git下载、安装、配置与简单应用</a></li>
+                        <li class="py-2"><a href="/news/article-18614.htm" title="猫抓伤了表皮出了一点血,过了2天（猫抓了一下出了点血伤口有点红）">猫抓伤了表皮出了一点血,过了2天（猫抓了一下出了点血伤口有点红）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-17-node-share-links.htm" title="12月17日19.9M/S|Shadowrocket/SSR/V2ray/Clash免费节点每天更新订阅链接，便宜机场推荐">12月17日19.9M/S|Shadowrocket/SSR/V2ray/Clash免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-20-node-share-links.htm" title="11月20日19.6M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐">11月20日19.6M/S|Clash/SSR/V2ray/Shadowrocket免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-31157.htm" title="URL编码及解码">URL编码及解码</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-5-clash-v2ray-ss-ssr.htm" title="12月5日18.1M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接，便宜机场推荐">12月5日18.1M/S|V2ray/Clash/Shadowrocket/SSR免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-22-free-shadowrocket-node.htm" title="11月22日20.1M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接，便宜机场推荐">11月22日20.1M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新订阅链接，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-23702.htm" title="Spring 5 中文解析数据存储篇-JDBC数据存储(下)">Spring 5 中文解析数据存储篇-JDBC数据存储(下)</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-16-free-clash.htm" title="1月16日20.2M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新链接地址，便宜机场推荐">1月16日20.2M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-10-clash-windows.htm" title="1月10日22.1M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新链接地址，便宜机场推荐">1月10日22.1M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-32616.htm" title="Android开发基础——Kotlin：标准函数和静态方法">Android开发基础——Kotlin：标准函数和静态方法</a></li>
                     </ul>
     </div>
 </div>
@@ -130,37 +159,16 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">92</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">34</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-09/" title="2024-09 归档">2024-09</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-08/" title="2024-08 归档">2024-08</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2024-07/" title="2024-07 归档">2024-07</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2024-06/" title="2024-06 归档">2024-06</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">31</span> <a href="/date/2024-05/" title="2024-05 归档">2024-05</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-04/" title="2024-04 归档">2024-04</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-03/" title="2024-03 归档">2024-03</a></h4>
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
             </li>
                     </ul>
     </div>
