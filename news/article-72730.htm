@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+       <link rel="canonical" href="https://clashfans.github.io/news/article-72730.htm" />
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="/assets/website/img/clashfans/favicon.ico" type="image/x-icon"/>
+    <!-- site metas -->
+    <title>设计模式学习笔记装饰器模式及其应用详解</title>
+        <meta name="description" content="装饰器（Decorator）模式：指不改变现有对象结构的情况下，动态地给该对象增加额外功能。 一、装饰器模式介绍 装饰器模式允许向一个现有的对象添加新的功能，同时不改变其结果。比如Java 中的IO框" />
+    
+    <meta name="author" content="ClashFans官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashfans.github.io/news/article-72730.htm" />
+    <meta property="og:site_name" content="ClashFans官网订阅站" />
+    <meta property="og:title" content="设计模式学习笔记装饰器模式及其应用详解" />
+    <meta property="og:image" content="https://clashfans.github.io/uploads/20240307/203388bd8d900f5f1b4340b4557d9a9c.webp" />
+        <meta property="og:release_date" content="2025-03-13T09:20:47" />
+    <meta property="og:updated_time" content="2025-03-13T09:20:47" />
+        <meta property="og:description" content="装饰器（Decorator）模式：指不改变现有对象结构的情况下，动态地给该对象增加额外功能。 一、装饰器模式介绍 装饰器模式允许向一个现有的对象添加新的功能，同时不改变其结果。比如Java 中的IO框" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="设计模式学习笔记装饰器模式及其应用详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/responsive.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P01PJ0V63S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P01PJ0V63S');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+       <!-- header section start -->
+    <div class="header_section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="logo">
+                                        <a href="/">Clash Fans</a>
+                                    </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- header section end -->
+      <!-- services section start -->
+      <div class="services_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="services_taital"><span class="about_icon">设计模式学习笔记装饰器模式及其应用详解 </h1>
+                    <p class="nav-box text-center">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</span>
+                    </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- services section end -->
+    <!-- about sectuion start -->
+    <div class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>装饰器（Decorator）模式：指不改变现有对象结构的情况下，动态地给该对象增加额外功能。</p> <h2 id="一装饰器模式介绍">一、装饰器模式介绍</h2> <p>装饰器模式允许向一个现有的对象添加新的功能，同时不改变其结果。比如Java 中的IO框架中，<code>FileInputStream</code>（处理文件）、<code>ByteArrayInputStream</code>（处理字节数组）、<code>BufferedInputStream</code>（带缓存的处理类）等就是对<code>InputStream</code>进行的功能扩展，这就是装饰器模式的典型应用。比如下面就是以缓存方式读取输入流：</p> <pre><code class="language-java">InputStream inputStream = new BufferedInputStream(new FileInputStream("test.txt")); byte[] data = new byte[128]; while(inputStream.read(data) != -1){     //... }</code></pre> <h3 id="11-装饰器模式结构">1.1 装饰器模式结构</h3> <p>装饰器主要使用组合关系来创建一个装饰对象，用于包裹真实对象，并在保持真实对象的类结构不变的前提下为其提供额外的功能。具体的基本结构如下所示：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/16f634c1d272c2f78720f8b02dc865d4.jpg" alt="设计模式学习笔记装饰器模式及其应用详解"></p> <ul> <li><code>Component</code>：抽象构件，定义一个抽象接口以规范准备接收附加责任的对象</li> <li><code>ComponentA</code>：具体构件，实现抽象构件，通过装饰角色为其添加一些职责</li> <li><code>Decorator</code>：抽象装饰构件，并包含具体构件的实例</li> <li><code>DecoratorA、DecoratorB</code>：实现抽象装饰构件的具体装饰构件，包含实现抽象装饰的相关方法</li> <li><code>Client</code>：客户端</li> </ul> <h3 id="12-装饰器模式实现">1.2 装饰器模式实现</h3> <p>根据上面的类图可以实现如下代码：</p> <pre><code class="language-java">/**  * @description: 抽象构件角色  * @author: wjw  * @date: 2022/3/31  */ public interface Component {      public void operation(); }  /**  * @description:具体构件角色  * @author: wjw  * @date: 2022/3/31  */ public class ComponentA implements Component{      public ComponentA() {         System.out.println("创建具体构件componentA");     }      @Override     public void operation() {         System.out.println("我是具体构件A的operation方法");     } }  /**  * @description: 抽象装饰  * @author: wjw  * @date: 2022/3/31  */ public class Decorator implements Component{      private Component component;      public Decorator(Component component) {         this.component = component;     }      @Override     public void operation() {         component.operation();     } }  /**  * @description: 具体装饰角色A  * @author: wjw  * @date: 2022/3/31  */ public class DecoratorA extends Decorator{      public DecoratorA(Component component) {         super(component);     }      @Override     public void operation() {         super.operation();         addedFunction();     }      /**      * 增加的额外功能      */     public void addedFunction() {         System.out.println("我是为具体装饰角色A增加额外功能方法addedFunction");     } }  /**  * @description: 具体装饰角色B  * @author: wjw  * @date: 2022/3/31  */ public class DecoratorB extends Decorator{      public DecoratorB(Component component) {         super(component);     }      @Override     public void operation() {         super.operation();         addedFunction();     }      private void addedFunction() {         System.out.println("为具体装饰角色增加额外的功能B");     } }  /**  * @description: 客户端  * @author: wjw  * @date: 2022/3/31  */ public class DecoratiorClient {      public static void main(String[] args) {         Component componentA = new ComponentA();         componentA.operation();         Decorator decoratorA = new DecoratorA(componentA);         decoratorA.operation();     } }</code></pre> <h2 id="二装饰器模式应用场景">二、装饰器模式应用场景</h2> <h3 id="21-java-io-类中的应用">2.1 Java IO 类中的应用</h3> <p>在开始介绍中提到，IO中有很多装饰器的应用：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/040f51929fdfdad40acbd738e44de053.jpg" alt="设计模式学习笔记装饰器模式及其应用详解"></p> <p>如上图所示，比如<code>InputStream</code>后面的若干装饰器类都是对其的功能扩展。</p> <h3 id="22-mybatis-中-cache的应用">2.2 MyBatis 中 Cache的应用</h3> <p>Cache 中除了有数据存储和缓存的基本功能外还有其他附加的 Cache 类，比如有 FifoCache（先进先出）、LruCache（最近最少使用LRU）、SychronizedCache（防止多线程并发访问）的众多附加功能的缓存类。都是装饰器的应用：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/cc20d96d7aea856e638014c7e88036dd.jpg" alt="设计模式学习笔记装饰器模式及其应用详解"></p> <h2 id="参考资料">参考资料</h2> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://mp.weixin.qq.com/s/hDJs6iG_YPww7yeiPxmZLw"  target="_blank" rel="nofollow">https://mp.weixin.qq.com/s/hDJs6iG_YPww7yeiPxmZLw</a>?</p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://c.biancheng.net/view/1366.html"  target="_blank" rel="nofollow">http://c.biancheng.net/view/1366.html</a></p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-72074.htm">上海宠物医院收费价目表图片大全最新（上海宠物医院排名）</a></p>
+                                        <p>下一个：<a href="/news/article-72731.htm">大人被猫咬了要打狂犬疫苗吗（大人被猫咬了需要***吗）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-3-7-free-ssr-subscribe.htm" title="3月7日18.1M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新链接地址，便宜机场推荐">3月7日18.1M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-66887.htm" title="宠物领养协议书范本 定期回访内容怎么写 宠物领养协议书范本 定期回访内容怎么写的">宠物领养协议书范本 定期回访内容怎么写 宠物领养协议书范本 定期回访内容怎么写的</a></li>
+                        <li class="py-2"><a href="/news/article-47780.htm" title="想开一家宠物店需要投资多少费用（开一家宠物店需要投资多少钱）">想开一家宠物店需要投资多少费用（开一家宠物店需要投资多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-25-free-shadowrocket-node.htm" title="1月25日20.9M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新链接地址，便宜机场推荐">1月25日20.9M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-1-shadowrocket-node.htm" title="3月1日19.9M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新链接地址，便宜机场推荐">3月1日19.9M/S|Clash/SSR/Shadowrocket/V2ray免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-29-free-clash-subscribe.htm" title="1月29日20.5M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新链接地址，便宜机场推荐">1月29日20.5M/S|V2ray/Shadowrocket/SSR/Clash免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-55121.htm" title="手把手带你入门链表的基本操作及其优化">手把手带你入门链表的基本操作及其优化</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-20-free-subscribe-node.htm" title="1月20日21.5M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新链接地址，便宜机场推荐">1月20日21.5M/S|SSR/Shadowrocket/Clash/V2ray免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-66265.htm" title="佳雯宠物医院总院投诉电话（佳雯宠物医院总部电话）">佳雯宠物医院总院投诉电话（佳雯宠物医院总部电话）</a></li>
+                        <li class="py-2"><a href="/news/article-41359.htm" title="中国最大宠物食品公司（中国最大宠物食品公司在哪里）">中国最大宠物食品公司（中国最大宠物食品公司在哪里）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">45</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+               </div>
+            </div>
+        </div>
+    </div>
+    <!-- about sectuion end -->
+        <!-- copyright section start -->
+    <div class="copyright_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="copyright_text">
+                        ClashFans官网订阅站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- copyright section end -->
+    <!-- Javascript files-->
+    <script src="/assets/website/js/frontend/clashfans/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/jquery-3.0.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/plugin.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
