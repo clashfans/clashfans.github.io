@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+       <link rel="canonical" href="https://clashfans.github.io/news/article-76095.htm" />
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="/assets/website/img/clashfans/favicon.ico" type="image/x-icon"/>
+    <!-- site metas -->
+    <title>vue实现拖拽排序、移除</title>
+        <meta name="description" content="vue实现拖拽排序、可用于图片、模块交换位置  效果 以“首页模块”为例    录屏软件很卡，实际效果是非常流畅的  本质都一样，只不过一个是单行、一个是双列，使用的是vuedraggle组件vued" />
+    
+    <meta name="author" content="ClashFans官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashfans.github.io/news/article-76095.htm" />
+    <meta property="og:site_name" content="ClashFans官网订阅站" />
+    <meta property="og:title" content="vue实现拖拽排序、移除" />
+    <meta property="og:image" content="https://clashfans.github.io/uploads/20240307/ee8e33ed726b650c6c647ebca53e3b0e.webp" />
+        <meta property="og:release_date" content="2025-03-18T06:11:40" />
+    <meta property="og:updated_time" content="2025-03-18T06:11:40" />
+        <meta property="og:description" content="vue实现拖拽排序、可用于图片、模块交换位置  效果 以“首页模块”为例    录屏软件很卡，实际效果是非常流畅的  本质都一样，只不过一个是单行、一个是双列，使用的是vuedraggle组件vued" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue实现拖拽排序、移除">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/responsive.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P01PJ0V63S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P01PJ0V63S');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+       <!-- header section start -->
+    <div class="header_section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="logo">
+                                        <a href="/">Clash Fans</a>
+                                    </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- header section end -->
+      <!-- services section start -->
+      <div class="services_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="services_taital"><span class="about_icon">vue实现拖拽排序、移除 </h1>
+                    <p class="nav-box text-center">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</span>
+                    </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- services section end -->
+    <!-- about sectuion start -->
+    <div class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>vue实现拖拽排序、可用于图片、模块交换位置</h3> <ul> <li><a href="#_2" rel="nofollow">效果</a></li> <li><a href="#_7" rel="nofollow">以“首页模块”为例</a></li> </ul> </div> </h1> <p>录屏软件很卡，实际效果是非常流畅的<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221230/c9ede4f08e448ebbb6ba6774087fcf0d.jpg" alt="vue实现拖拽排序、移除"></p> </h1> <p>本质都一样，只不过一个是单行、一个是双列，使用的是vuedraggle组件<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/SortableJS/Vue.Draggable"  rel="nofollow">vuedraggle</a><br /> draggable就是组件，两个组件都写同一个group，则两栏可以互相拖拽，list绑定对应的数据源</p> <pre><code class="prism language-javascript">				<span class="token comment">// 左边栏</span>               <span class="token operator">&lt;</span>div style<span class="token operator">=</span><span class="token string">"float: left"</span><span class="token operator">&gt;</span>                 <span class="token operator">&lt;</span>draggable                     animation<span class="token operator">=</span><span class="token string">"300"</span>                     group<span class="token operator">=</span><span class="token string">"module"</span>                     <span class="token operator">:</span>list<span class="token operator">=</span><span class="token string">"form.left"</span><span class="token operator">&gt;</span>                   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"left"</span> <span class="token operator">:</span>style<span class="token operator">=</span><span class="token string">"{height: leftModuleHeight}"</span> v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(item,index) in form.left"</span>                        v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"form.left[index]"</span><span class="token operator">&gt;</span>                     <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"text-option"</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span> item<span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>                     <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"el-icon-error"</span>                        style<span class="token operator">=</span><span class="token string">"color: red;font-size: 20px;display: flex;margin-top: -55px;margin-left: 190px;cursor: pointer"</span>                        @click<span class="token operator">=</span><span class="token string">"removeModule(item.name)"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>                   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>                 <span class="token operator">&lt;</span><span class="token operator">/</span>draggable<span class="token operator">&gt;</span>               <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>               <span class="token comment">// 右边栏</span>                  <span class="token operator">&lt;</span>div style<span class="token operator">=</span><span class="token string">"float: right"</span><span class="token operator">&gt;</span>                 <span class="token operator">&lt;</span>draggable                     animation<span class="token operator">=</span><span class="token string">"300"</span>                     group<span class="token operator">=</span><span class="token string">"module"</span>                     <span class="token operator">:</span>list<span class="token operator">=</span><span class="token string">"form.right"</span><span class="token operator">&gt;</span>                   <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"left"</span> <span class="token operator">:</span>style<span class="token operator">=</span><span class="token string">"{height: rightModuleHeight}"</span> v<span class="token operator">-</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token string">"(item,index) in form.right"</span>                        v<span class="token operator">-</span>model<span class="token operator">=</span><span class="token string">"form.right[index]"</span><span class="token operator">&gt;</span>                     <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"text-option"</span><span class="token operator">&gt;</span><span class="token punctuation">{<!-- --></span><span class="token punctuation">{<!-- --></span> item<span class="token punctuation">.</span>name <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">&gt;</span>                     <span class="token operator">&lt;</span>i <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"el-icon-error"</span>                        style<span class="token operator">=</span><span class="token string">"color: red;font-size: 20px;display: flex;margin-top: -55px;margin-left: 190px;cursor: pointer"</span>                        @click<span class="token operator">=</span><span class="token string">"removeModule(item.name)"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>i<span class="token operator">&gt;</span>                   <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>                 <span class="token operator">&lt;</span><span class="token operator">/</span>draggable<span class="token operator">&gt;</span>               <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span> </code></pre> <pre><code class="prism language-javascript"><span class="token comment">// 数据</span>  form<span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>         left<span class="token operator">:</span> <span class="token punctuation">[</span>           <span class="token punctuation">{<!-- --></span>id<span class="token operator">:</span> <span class="token string">"xiangmujindu"</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">"项目进度"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>           <span class="token punctuation">{<!-- --></span>id<span class="token operator">:</span> <span class="token string">"huanjingjiance"</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">"环境检测"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>           <span class="token punctuation">{<!-- --></span>id<span class="token operator">:</span> <span class="token string">"shipingjiankong"</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">"视频监控"</span><span class="token punctuation">}</span>         <span class="token punctuation">]</span><span class="token punctuation">,</span>         right<span class="token operator">:</span> <span class="token punctuation">[</span>           <span class="token punctuation">{<!-- --></span>id<span class="token operator">:</span> <span class="token string">"jixiecheliang"</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">"机械/车辆"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>           <span class="token punctuation">{<!-- --></span>id<span class="token operator">:</span> <span class="token string">"anquanjiankong"</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">"安全监控"</span><span class="token punctuation">}</span><span class="token punctuation">,</span>           <span class="token punctuation">{<!-- --></span>id<span class="token operator">:</span> <span class="token string">"xiangmudongtai"</span><span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">"项目动态"</span><span class="token punctuation">}</span>         <span class="token punctuation">]</span>       <span class="token punctuation">}</span><span class="token punctuation">,</span> </code></pre> <pre><code class="prism language-javascript"><span class="token comment">// 动态计算div高度，确保拖拽是，div不会被撑开</span> computed<span class="token operator">:</span> <span class="token punctuation">{<!-- --></span>     <span class="token function-variable function">leftModuleHeight</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>       <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">480</span> <span class="token operator">/</span> <span class="token keyword">this</span><span class="token punctuation">.</span>form<span class="token punctuation">.</span>left<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span><span class="token punctuation">,</span>     <span class="token function-variable function">rightModuleHeight</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>       <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token number">480</span> <span class="token operator">/</span> <span class="token keyword">this</span><span class="token punctuation">.</span>form<span class="token punctuation">.</span>right<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span>   <span class="token punctuation">}</span><span class="token punctuation">,</span> method<span class="token operator">:</span> <span class="token punctuation">{<!-- --></span> <span class="token comment">// 移除按钮的操作</span>  <span class="token function">removeModule</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>       <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>form<span class="token punctuation">.</span>left<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token parameter">v</span> <span class="token operator">=&gt;</span> v<span class="token punctuation">.</span>name <span class="token operator">===</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{<!-- --></span>         <span class="token keyword">this</span><span class="token punctuation">.</span>form<span class="token punctuation">.</span>left<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>form<span class="token punctuation">.</span>left<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token parameter">value</span> <span class="token operator">=&gt;</span> value<span class="token punctuation">.</span>name <span class="token operator">===</span> name<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">this</span><span class="token punctuation">.</span>form<span class="token punctuation">.</span>right<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>form<span class="token punctuation">.</span>right<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token parameter">value</span> <span class="token operator">=&gt;</span> value<span class="token punctuation">.</span>name <span class="token operator">===</span> name<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>     <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">}</span> </code></pre> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-75421.htm">动物医院名片模板图片（动物医院门头牌匾图片大全）</a></p>
+                                        <p>下一个：<a href="/news/article-76096.htm">重庆宠物领养中心有哪些地方好（重庆宠物猫领养中心）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-53475.htm" title="办一个宠物饲料厂多少钱（宠物饲料厂投资多少钱）">办一个宠物饲料厂多少钱（宠物饲料厂投资多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-36926.htm" title="宠物粮生产设备前十名排名 宠物粮生产设备前十名排名榜">宠物粮生产设备前十名排名 宠物粮生产设备前十名排名榜</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-17-free-node-subscribe.htm" title="3月17日19.1M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新链接地址，便宜机场推荐">3月17日19.1M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-3-free-node-subscribe-links.htm" title="2月3日19.6M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新链接地址，便宜机场推荐">2月3日19.6M/S|Clash/V2ray/SSR/Shadowrocket免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-44840.htm" title="VUE项目解决Vant组件库样式修改不生效问题">VUE项目解决Vant组件库样式修改不生效问题</a></li>
+                        <li class="py-2"><a href="/news/article-56225.htm" title="初中毕业能上兽医学校江苏招生吗（有没有从初中直接上兽医专业的学校）">初中毕业能上兽医学校江苏招生吗（有没有从初中直接上兽医专业的学校）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-18-node-share.htm" title="2月18日19.7M/S|Shadowrocket/SSR/V2ray/Clash免费节点每天更新链接地址，便宜机场推荐">2月18日19.7M/S|Shadowrocket/SSR/V2ray/Clash免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-65023.htm" title="动物疫苗***报告怎么写（动物疫苗的生产及检验实践报告）">动物疫苗***报告怎么写（动物疫苗的生产及检验实践报告）</a></li>
+                        <li class="py-2"><a href="/news/article-63796.htm" title="包含初中学历能考什么证书可以挂靠的的词条">包含初中学历能考什么证书可以挂靠的的词条</a></li>
+                        <li class="py-2"><a href="/news/article-57918.htm" title="宠物粮食加工厂怎么起步做生意呢视频教学（宠物粮食加工厂好做吗）">宠物粮食加工厂怎么起步做生意呢视频教学（宠物粮食加工厂好做吗）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">54</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+               </div>
+            </div>
+        </div>
+    </div>
+    <!-- about sectuion end -->
+        <!-- copyright section start -->
+    <div class="copyright_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="copyright_text">
+                        ClashFans官网订阅站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- copyright section end -->
+    <!-- Javascript files-->
+    <script src="/assets/website/js/frontend/clashfans/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/jquery-3.0.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/plugin.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
