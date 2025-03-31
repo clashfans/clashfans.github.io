@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+       <link rel="canonical" href="https://clashfans.github.io/news/article-83696.htm" />
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="/assets/website/img/clashfans/favicon.ico" type="image/x-icon"/>
+    <!-- site metas -->
+    <title>kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级</title>
+        <meta name="description" content="此文系【大话云原生】系列第四篇，该系列文章期望用最通俗、简单的语言说明白云原生生态系统内的组成、架构以及应用关系。从这篇开始我们要开始针对Kubernetes进行介绍了，本文内容如下： 一、Kuber" />
+    
+    <meta name="author" content="ClashFans官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashfans.github.io/news/article-83696.htm" />
+    <meta property="og:site_name" content="ClashFans官网订阅站" />
+    <meta property="og:title" content="kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级" />
+    <meta property="og:image" content="https://clashfans.github.io/uploads/20240307/7be282f692864a0810e3a8733768082b.webp" />
+        <meta property="og:release_date" content="2025-03-29T08:59:10" />
+    <meta property="og:updated_time" content="2025-03-29T08:59:10" />
+        <meta property="og:description" content="此文系【大话云原生】系列第四篇，该系列文章期望用最通俗、简单的语言说明白云原生生态系统内的组成、架构以及应用关系。从这篇开始我们要开始针对Kubernetes进行介绍了，本文内容如下： 一、Kuber" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/responsive.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P01PJ0V63S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P01PJ0V63S');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+       <!-- header section start -->
+    <div class="header_section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="logo">
+                                        <a href="/">Clash Fans</a>
+                                    </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- header section end -->
+      <!-- services section start -->
+      <div class="services_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="services_taital"><span class="about_icon">kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级 </h1>
+                    <p class="nav-box text-center">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</span>
+                    </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- services section end -->
+    <!-- about sectuion start -->
+    <div class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<p>此文系【大话云原生】系列第四篇，该系列文章<strong>期望用最通俗、简单的语言说明白云原生生态系统内的组成、架构以及应用关系</strong>。从这篇开始我们要开始针对Kubernetes进行介绍了，本文内容如下：</p> <h2 id="一kubernetes的pod概念解析">一、Kubernetes的Pod概念解析</h2> <p>前文说到老婆过生日了我们一起出去旅游，上了团体服务班车，小娜同学(老婆)闲聊到：“这服务还不错哈，2个跟车导游，1个司机”。三句不离老本行，我无聊的说到：“他们三个人就是一个Pod，提供一天的旅游服务内容，有主有次不可分割"。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/cf8555450efeff8307362762c1a4ee5d.jpg" alt="kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级"></p> <p>小娜同学又上套了：“什么是Pod啊？英文单词豌豆荚？”，让老婆增加对老公崇拜感的机会不可多得，那就开讲，反正坐车也是闲着。</p> <ul> <li><strong>一般来说一个Pod提供一种服务(微服务)，“哎？之前说容器的时候你也是这么说的”</strong>。是的，容器是提供服务的最小单元，那么Pod是什么概念？这是因为我们现在讨论的是k8s，<strong>Pod是k8s服务调度的最小单元</strong>。</li> <li><strong>“为什么引入Pod的概念？”</strong>，因为有的时候你会发现：一个服务通常包含辅助它的服务。比如这个车上，一个导游长得漂亮口才好作为主导游提供核心讲解服务，还有一个辅助她的导游负责发帽子、统计人数、统计消费等。同理回到架构技术角度，一个nginx提供web服务容器作为核心服务容器，负责收集nginx日志的服务容器作为辅助服务和它部署在一起，这样方便日志收集与连接。</li> <li><strong>一个Pod存在一个基础容器Infra</strong>，基础容器Infra提供了网络共享的能力，就像主导游和辅助导游必须在一辆车（基础容器Infra）上，或者基于这辆车组成了一个组合，否则他们之间无法对话及资源共享。</li> <li><strong>一个Pod下的容器共享网络及数据卷</strong>，所以将容器服务间具有相当强的捆绑关系的服务容器放到一个Pod里面，通常一个容器提供核心服务，其他的容器提供辅助服务，如：日志收集、监控告警等。</li> </ul> <h2 id="二pod标签与service服务">二、Pod标签与Service服务</h2> <p>聊着聊着很快车就到了旅游目的地，一下车发现X公司的团队还真不少。导游都统一都带上了<strong>深红色的帽子</strong>（游客带上蓝色遮阳帽），浩浩荡荡出发。<strong>深红色的帽子为导游打上了标签</strong>，他们面向游客（用户）提供了统一的一种服务叫做：“导游服务”。</p> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/c9d85187b30bff908cbfc92d20eb5126.jpg" alt="kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级"></p> <p>对于K8s中的服务架构也是一样的：</p> <ul> <li>一个Pod通常提供一种服务，如nginx web访问服务</li> <li>多个提供同样服务的Pod通常打上一样的标签</li> <li>创建Service：具备同一种标签的Pod组成一个Service，对外提供服务。</li> </ul> <h2 id="三自动化服务升级-灰度发布">三、自动化服务升级-灰度发布</h2> <p>我们今天的项目是爬山，提供了两种方式：一是直接爬(即步行)，二是坐缆车，当然如果你中途爬不动了也可以在缆车换乘站上缆车。</p> <ul> <li>步行到缆车可以理解为一次服务升级（1.0版本服务升级为2.0版本服务）。从技术角度，服务升级等同于新版本服务的部署被称为Deployment。K8s同样使用Deployment这个术语代表服务升级部署。</li> <li>ReplicaSet代表一个版本的Pod服务组合，1.0步行版本的Pod服务组合，2.0为缆车版本的Pod服务组合，这样理解是不是容易多了呢？</li> <li>在服务容器部署Deployment的过程中，不希望服务中断(即：不希望对步行1.0的用户的服务出现中断情况)，所以停掉一个1.0的Pod，再启动一个2.0的Pod2.0，这个过程被称为灰度发布。整个过程高度依赖Kubernetes提供的自动化运维能力。</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/536ac930efee297353ac2b4944619526.jpg" alt="kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级"></p> <p>上面的图每个RS只有2个Pod，还不能那么直观的理解灰度发布，看下面这张图</p> <ul> <li>圆形代表Pod，分为v1版本和v2版本，虚线标识的Pod表示即将下线的Pod</li> <li>v1版本的Pod减一，v2版本的pod加一</li> <li>逐渐ReplicaSet：v1的Pod全部销毁，ReplicaSet：v2的Pod逐渐被创建并启动提供服务</li> <li>整个的灰度发布过程，在k8s种通过一个Deployment进行定义。</li> </ul> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/40882310dd51af43efce4b4012e9b817.jpg" alt="kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级"><br /> 此专栏《大话云原生》的前三篇文章如下</p> <ul> <li>《【大话云原生】煮饺子与docker、kubernetes之间的关系》</li> <li>《【大话云原生】负载均衡篇-小饭馆的流量变大了》</li> <li>《【大话云原生】微服务篇-五星级酒店的服务方式》</li> </ul> <p><strong>如果您读完了觉得有收获，期待您能转发分享，您的支持是我不竭的创作动力！</strong></p> <p></p> <ul></ul> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-83693.htm">.NET宝藏API之：OutputFormatter，格式化输出对象</a></p>
+                                        <p>下一个：<a href="/news/article-84416.htm">【Spring】——事务实现过程及原理</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-45820.htm" title="SpringBoot和RocketMQ的实例RocketMQTemplate">SpringBoot和RocketMQ的实例RocketMQTemplate</a></li>
+                        <li class="py-2"><a href="/news/article-46323.htm" title="宠物医院收费价目表昆明（昆明宠物医院24小时营业）">宠物医院收费价目表昆明（昆明宠物医院24小时营业）</a></li>
+                        <li class="py-2"><a href="/news/article-83693.htm" title=".NET宝藏API之：OutputFormatter，格式化输出对象">.NET宝藏API之：OutputFormatter，格式化输出对象</a></li>
+                        <li class="py-2"><a href="/news/article-65023.htm" title="动物疫苗***报告怎么写（动物疫苗的生产及检验实践报告）">动物疫苗***报告怎么写（动物疫苗的生产及检验实践报告）</a></li>
+                        <li class="py-2"><a href="/news/article-72731.htm" title="大人被猫咬了要打狂犬疫苗吗（大人被猫咬了需要***吗）">大人被猫咬了要打狂犬疫苗吗（大人被猫咬了需要***吗）</a></li>
+                        <li class="py-2"><a href="/news/article-80186.htm" title="猫咪打疫苗一般多少钱一次打几针（猫咪打疫苗要打几针要多少钱）">猫咪打疫苗一般多少钱一次打几针（猫咪打疫苗要打几针要多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-51875.htm" title="动物疫苗管理员工作年度总结（动物疫苗管理员工作年度总结怎么写）">动物疫苗管理员工作年度总结（动物疫苗管理员工作年度总结怎么写）</a></li>
+                        <li class="py-2"><a href="/news/article-36434.htm" title="动物医院心得体会怎么写啊（动物医院总结）">动物医院心得体会怎么写啊（动物医院总结）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-22-node-share-links.htm" title="1月22日20.5M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新链接地址，便宜机场推荐">1月22日20.5M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-43335.htm" title="动物疫苗厂家（动物疫苗厂家有哪些）">动物疫苗厂家（动物疫苗厂家有哪些）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+               </div>
+            </div>
+        </div>
+    </div>
+    <!-- about sectuion end -->
+        <!-- copyright section start -->
+    <div class="copyright_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="copyright_text">
+                        ClashFans官网订阅站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- copyright section end -->
+    <!-- Javascript files-->
+    <script src="/assets/website/js/frontend/clashfans/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/jquery-3.0.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/plugin.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

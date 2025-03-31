@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+       <link rel="canonical" href="https://clashfans.github.io/news/article-84416.htm" />
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="/assets/website/img/clashfans/favicon.ico" type="image/x-icon"/>
+    <!-- site metas -->
+    <title>【Spring】——事务实现过程及原理</title>
+        <meta name="description" content="&nbsp;  Spring事务处理，是将事务处理的工作统一起来，并为事务处理提供通用的支持。  &nbsp;   &nbsp;  a、划分处理单元——IOC   &nbsp;  由于spring解决" />
+    
+    <meta name="author" content="ClashFans官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashfans.github.io/news/article-84416.htm" />
+    <meta property="og:site_name" content="ClashFans官网订阅站" />
+    <meta property="og:title" content="【Spring】——事务实现过程及原理" />
+    <meta property="og:image" content="https://clashfans.github.io/uploads/20240307/c0bbeb432b7671ef1e477224ca953b7c.webp" />
+        <meta property="og:release_date" content="2025-03-30T09:31:56" />
+    <meta property="og:updated_time" content="2025-03-30T09:31:56" />
+        <meta property="og:description" content="&nbsp;  Spring事务处理，是将事务处理的工作统一起来，并为事务处理提供通用的支持。  &nbsp;   &nbsp;  a、划分处理单元——IOC   &nbsp;  由于spring解决" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="【Spring】——事务实现过程及原理">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/responsive.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P01PJ0V63S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P01PJ0V63S');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+       <!-- header section start -->
+    <div class="header_section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="logo">
+                                        <a href="/">Clash Fans</a>
+                                    </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- header section end -->
+      <!-- services section start -->
+      <div class="services_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="services_taital"><span class="about_icon">【Spring】——事务实现过程及原理 </h1>
+                    <p class="nav-box text-center">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</span>
+                    </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- services section end -->
+    <!-- about sectuion start -->
+    <div class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="htmledit_views"> </h1> <p style="margin:0in 0in 0in 0.375in; font-family:宋体; font-size:14pt">&nbsp;</p> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#3A3838"> <span lang="en-US">Spring</span><span lang="zh-CN">事务处理，是将事务处理的工作统一起来，并为事务处理提供通用的支持。</span></p> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> </h1> <p style="margin:0in; margin-left:.375in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <h2 style="margin:0in; margin-left:.75in; font-size:14.0pt"> <span lang="en-US" style="font-family:Calibri; color:#3A3838">a</span><span lang="zh-CN" style="font-family:宋体; color:#3A3838">、</span><span lang="zh-CN" style="font-family:宋体; color:#ED7D31"><strong>划分处理单元——</strong></span><span lang="en-US" style="font-family:宋体; color:#ED7D31"><strong>IOC</strong></span><br /> </h2> <p lang="en-US" style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#ED7D31"> &nbsp;</p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> <span lang="zh-CN">由于</span><span lang="en-US">spring</span><span lang="zh-CN">解决的问题是对单个数据库进行局部事务处理的，具体的实现首相用</span><span lang="en-US">spring</span><span lang="zh-CN">中的</span><span lang="en-US">IOC</span><span lang="zh-CN">划分了事务处理单元。并且将对事务的各种配置放到了</span><span lang="en-US">ioc</span><span lang="zh-CN">容器中（设置事务管理器，设置事务的传播特性及隔离机制）。</span></p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <h2 style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt"> <span lang="en-US" style="color:#3A3838">b</span><span lang="zh-CN" style="color:#3A3838">、</span><span lang="en-US" style="color:#ED7D31"><strong>AOP</strong></span><span lang="zh-CN" style="color:#ED7D31"><strong>拦截需要进行事务处理的类</strong></span><br /> </h2> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#ED7D31"> &nbsp;</p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> <span lang="en-US">Spring</span><span lang="zh-CN">事务处理模块是通过</span><span lang="en-US">AOP</span><span lang="zh-CN">功能来实现声明式事务处理的，具体操作（比如事务实行的配置和读取，事务对象的抽象），用</span><span lang="en-US">TransactionProxyFactoryBean</span><span lang="zh-CN">接口来使用</span><span lang="en-US">AOP</span><span lang="zh-CN">功能，生成</span><span lang="en-US">proxy</span><span lang="zh-CN">代理对象，通过</span><span lang="en-US">TransactionInterceptor</span><span lang="zh-CN">完成对代理方法的拦截，将事务处理的功能编织到拦截的方法中。</span></p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> <span lang="zh-CN">读取</span><span lang="en-US">ioc</span><span lang="zh-CN">容器事务配置属性，转化为</span><span lang="en-US">spring</span><span lang="zh-CN">事务处理需要的内部数据结构（</span><span lang="en-US">TransactionAttributeSourceAdvisor</span><span lang="zh-CN">），转化为</span><span lang="en-US">TransactionAttribute</span><span lang="zh-CN">表示的数据对象。</span></p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <h2 style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt"> <span lang="en-US" style="color:#3A3838">c</span><span lang="zh-CN" style="color:#3A3838">、</span><span lang="zh-CN" style="color:#ED7D31"><strong>对事物处理实现（事务的生成、提交、回滚、挂起）</strong></span><br /> </h2> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#ED7D31"> &nbsp;</p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> <span lang="en-US">spring</span><span lang="zh-CN">委托给具体的事务处理器实现。实现了一个抽象和适配。适配的具体事务处理器：</span><span lang="en-US">DataSource</span><span lang="zh-CN">数据源支持、</span><span lang="en-US">hibernate</span><span lang="zh-CN">数据源事务处理支持、</span><span lang="en-US">JDO</span><span lang="zh-CN">数据源事务处理支持，</span><span lang="en-US">JPA</span><span lang="zh-CN">、</span><span lang="en-US">JTA</span><span lang="zh-CN">数据源事务处理支持。这些支持都是通过设计</span><span lang="en-US">PlatformTransactionManager</span><span lang="zh-CN">、</span><span lang="en-US">AbstractPlatforTransaction</span><span lang="zh-CN">一系列事务处理的支持。</span></p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <p style="margin:0in; margin-left:.75in; font-size:14.0pt; color:#3A3838"><span lang="en-US" style="font-family:Calibri">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span lang="zh-CN" style="font-family:宋体">为常用数据源支持提供了一系列的</span><span lang="en-US" style="font-family:宋体">TransactionManager</span><span lang="zh-CN" style="font-family:宋体">。</span></p> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <h2 style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt"> <span lang="en-US" style="color:#3A3838">d</span><span lang="zh-CN" style="color:#3A3838">、</span><span lang="zh-CN" style="color:#ED7D31"><strong>结合</strong></span><br /> </h2> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#ED7D31"> &nbsp;</p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> <span lang="en-US">PlatformTransactionManager</span><span lang="zh-CN">实现了</span><span lang="en-US">TransactionInterception</span><span lang="zh-CN">接口，让其与</span><span lang="en-US">TransactionProxyFactoryBean</span><span lang="zh-CN">结合起来，形成一个</span><span lang="en-US">Spring</span><span lang="zh-CN">声明式事务处理的设计体系。</span></p> <p style="margin:0in; margin-left:1.125in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> </h1> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#3A3838"> &nbsp;</p> <p style="margin:0in; margin-left:.75in; font-family:宋体; font-size:14.0pt; color:#3A3838"> <span lang="zh-CN">&nbsp; 支持不同数据源，在底层进行封装，可以做到事务即开即用，这样的好处是：即使有其他的数据源事务处理需要，</span><span lang="en-US">Spring</span><span lang="zh-CN">也提供了一种一致的方式。</span></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-83696.htm">kubernetes灰度发布篇-从步行到坐缆车的自动化服务升级</a></p>
+                                        <p>下一个：<a href="/news/article-84417.htm">新手开宠物店需要了解哪些知识呢（零基础开宠物店）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-70103.htm" title="宠物领养赠送平台有哪些 宠物赠送/领养都在哪个网站">宠物领养赠送平台有哪些 宠物赠送/领养都在哪个网站</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-free-node-subscribe-links.htm" title="3月25日21.7M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新链接地址，便宜机场推荐">3月25日21.7M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-41360.htm" title="小型狗粮加工厂的流程 小型狗粮加工厂的流程图">小型狗粮加工厂的流程 小型狗粮加工厂的流程图</a></li>
+                        <li class="py-2"><a href="/news/article-64394.htm" title="动物疫苗管理法律法规最新文件是什么（动物疫苗法最新消息2019）">动物疫苗管理法律法规最新文件是什么（动物疫苗法最新消息2019）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-27-free-ssr-subscribe.htm" title="1月27日18.3M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新链接地址，便宜机场推荐">1月27日18.3M/S|SSR/Clash/Shadowrocket/V2ray免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-8-free-subscribe-node.htm" title="2月8日18.3M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新链接地址，便宜机场推荐">2月8日18.3M/S|V2ray/SSR/Shadowrocket/Clash免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-80186.htm" title="猫咪打疫苗一般多少钱一次打几针（猫咪打疫苗要打几针要多少钱）">猫咪打疫苗一般多少钱一次打几针（猫咪打疫苗要打几针要多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-67549.htm" title="猫粮利润率多少合理（猫粮的利润率）">猫粮利润率多少合理（猫粮的利润率）</a></li>
+                        <li class="py-2"><a href="/news/article-39382.htm" title="【宠物狗免费领养】（宠物狗免费领养真的假的）">【宠物狗免费领养】（宠物狗免费领养真的假的）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-26-free-v2ray-subscribe.htm" title="2月26日19M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新链接地址，便宜机场推荐">2月26日19M/S|SSR/Shadowrocket/V2ray/Clash免费节点每天更新链接地址，便宜机场推荐</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+               </div>
+            </div>
+        </div>
+    </div>
+    <!-- about sectuion end -->
+        <!-- copyright section start -->
+    <div class="copyright_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="copyright_text">
+                        ClashFans官网订阅站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- copyright section end -->
+    <!-- Javascript files-->
+    <script src="/assets/website/js/frontend/clashfans/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/jquery-3.0.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/plugin.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

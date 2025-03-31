@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+       <link rel="canonical" href="https://clashfans.github.io/news/article-82991.htm" />
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="/assets/website/img/clashfans/favicon.ico" type="image/x-icon"/>
+    <!-- site metas -->
+    <title>解决antdv的table因数据量过大导致的卡顿问题</title>
+        <meta name="description" content="遇到的问题：antdv的table表格使用时因数据量过大，造成标签页切换卡顿的问题 解决办法：绑定滚动事件，页面只显示在可视区域内的数据，没在可视区域内的数据不予展示，dom元素的scrollHeig" />
+    
+    <meta name="author" content="ClashFans官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashfans.github.io/news/article-82991.htm" />
+    <meta property="og:site_name" content="ClashFans官网订阅站" />
+    <meta property="og:title" content="解决antdv的table因数据量过大导致的卡顿问题" />
+    <meta property="og:image" content="https://clashfans.github.io/uploads/20240307/729c7362dc804f1775b45fefafb51f1e.webp" />
+        <meta property="og:release_date" content="2025-03-28T09:52:44" />
+    <meta property="og:updated_time" content="2025-03-28T09:52:44" />
+        <meta property="og:description" content="遇到的问题：antdv的table表格使用时因数据量过大，造成标签页切换卡顿的问题 解决办法：绑定滚动事件，页面只显示在可视区域内的数据，没在可视区域内的数据不予展示，dom元素的scrollHeig" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="解决antdv的table因数据量过大导致的卡顿问题">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/responsive.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P01PJ0V63S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P01PJ0V63S');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+       <!-- header section start -->
+    <div class="header_section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="logo">
+                                        <a href="/">Clash Fans</a>
+                                    </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- header section end -->
+      <!-- services section start -->
+      <div class="services_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="services_taital"><span class="about_icon">解决antdv的table因数据量过大导致的卡顿问题 </h1>
+                    <p class="nav-box text-center">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</span>
+                    </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- services section end -->
+    <!-- about sectuion start -->
+    <div class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <h2><a id="antdvtable_0" rel="nofollow"></a>遇到的问题：antdv的table表格使用时因数据量过大，造成标签页切换卡顿的问题</h2> <h2><a id="domscrollHeightoffsetHeightscrollTopscrollTocountcountcountcountslice20_1" rel="nofollow"></a>解决办法：绑定滚动事件，页面只显示在可视区域内的数据，没在可视区域内的数据不予展示，dom元素的scrollHeight和offsetHeight和scrollTop三个值的比较，判断是否滑到底部了或者顶部了，滑到底部或顶部之后，用scrollTo函数改变滚动条的位置，使其可以再次触发滑到顶部或底部，用计数count，下滚一下count++,上滚一下count–，用count来从原数据里slice哪20条数据展示</h2> <p>上代码：</p> <pre><code>mounted () { document.querySelector('#test table').addEventListener('scroll', this.handleScroll) // 给dom元素绑定scroll事件，可以在mounted的时候就给他绑定 }, methods: {     handleScroll (e) {       this.scrollTop = e.target.scrollTop       this.offsetHeight = e.target.offsetHeight       this.scrollHeight = e.target.scrollHeight       // 不足20条数据，就都展示了就好       if (this.data.length &lt; 20) {         this.dataScroll= this.data         // 滑到顶部也是给个提示         if (this.scrollTop === 0) {           this.$message.warn('您已经滑到顶部了')         }         // 滑到底部还是给个提示         if ((this.scrollTop + this.offsetHeight) &gt;= this.scrollHeight) {           this.$message.warn('没有更多数据了')         }         return       }        // 滑到顶部scrollTop为0       if (this.scrollTop === 0) {         this.selectedRowKeys = []         // 计数变为1，即如果是1就代表滑到顶部了，取0-20条数的告警在可视区域         let scrollCountTop = this.scrollCount         if (this.scrollCount &lt;= 0) {           this.scrollCount = 1         }         if (this.scrollCount === 1) {           this.datascroll= this.data.slice(0, this.numberMaxOverView)  // this.numberMaxOverView是要在这一页展示的数据条数           this.$message.warn('您已经滑到顶部了')         } else {           // 如果不是在顶部，根据计数计算展示哪20条数据，同时上滑要将计数减一，将滑条改变位置为了触发下一次到顶部的计算           document.querySelector('#test .test').scrollTo(0, 10)           this.datascroll= this.data.slice(((this.numberMaxOverView * (scrollCountTop - 1) - this.cacheNum)), (this.numberMaxOverView * scrollCountTop))           this.scrollCount--         }       }             // 滑到底部       if ((this.scrollTop + this.offsetHeight) &gt;= this.scrollHeight) {         this.selectedRowKeys = []         // 如果是最后一次数据展示，计算需要展示的条数         let scrollCount = this.scrollCount         let isLastPage = this.numberMaxOverView - (this.data.length - this.scrollCount * (this.datascroll.length - this.cacheNum))         let lastNum = this.scrollCount * (this.data.length - this.cacheNum) - isLastPage         if (isLastPage &gt;= 0) {           this.datascroll= this.data.slice(lastNum - this.cacheNum, this.data.length)           this.$message.warn('没有更多数据了')         } else {           // 如果不是最后一次，根据计数计算展示哪20条数据，同时下滑要将计数加一，将滑条改变位置为了触发下一次底部计算           document.querySelector('#test.demo').scrollTo(0, 100)           // 如果是第一次下滑计算缓存不能再是触顶的0，可以是计算缓存往上10条           if ((this.numberMaxOverView * scrollCount - this.cacheNum) &lt; 0) {             this.datascroll= this.data.slice((this.numberMaxOverView - this.cacheNum), (this.numberMaxOverView * 2))             this.scrollCount++           } else {             this.datascroll= this.data.slice((this.numberMaxOverView * scrollCount - this.cacheNum), (this.numberMaxOverView * (scrollCount + 1)))             this.scrollCount++           }         }       } }</code></pre> <p>注意：addeventlistener没办法绑定上handlescroll事件，原因目前碰到的有二，一是你queryselector的时候没找到元素，如果是组件的话去控制台看一下元素的class有没有绑正确，再不然就给个你要绑定的id，在它下边找一找，总之你的dom要绑对；二是你用的组件是否需要给定scrollxy的属性才能绑定scroll事件<br /> 可以参考antdv它的list滚动无限加载的思想，如果无需其他操作只是一个list的话也可以用虚拟滚动的组件实现vue-virtual-scroller</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-82284.htm">1970年农历12月出生女性的命（1970年阴历12月）</a></p>
+                                        <p>下一个：<a href="/news/article-82992.htm">普通狗粮多少钱一斤（狗粮多少钱一斤算好）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-2-2-clash-node.htm" title="2月2日20.7M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新链接地址，便宜机场推荐">2月2日20.7M/S|SSR/V2ray/Shadowrocket/Clash免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-62582.htm" title="jar包在linux下读取resources下文件">jar包在linux下读取resources下文件</a></li>
+                        <li class="py-2"><a href="/news/article-58416.htm" title="宠物店最怕什么投诉才会退款 宠物买卖纠纷找哪个部门协调">宠物店最怕什么投诉才会退款 宠物买卖纠纷找哪个部门协调</a></li>
+                        <li class="py-2"><a href="/news/article-63797.htm" title="内蒙古自治区动物防疫条例（内蒙古动物检疫防疫）">内蒙古自治区动物防疫条例（内蒙古动物检疫防疫）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-23-free-v2ray.htm" title="3月23日19.2M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新链接地址，便宜机场推荐">3月23日19.2M/S|Shadowrocket/V2ray/SSR/Clash免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-54565.htm" title="宠物粮食店名称大全图片及图片（宠物粮店名字）">宠物粮食店名称大全图片及图片（宠物粮店名字）</a></li>
+                        <li class="py-2"><a href="/news/article-74740.htm" title="python 列表数据组装sql查询数据">python 列表数据组装sql查询数据</a></li>
+                        <li class="py-2"><a href="/news/article-72074.htm" title="上海宠物医院收费价目表图片大全最新（上海宠物医院排名）">上海宠物医院收费价目表图片大全最新（上海宠物医院排名）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-29-clash-windows.htm" title="3月29日21M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新链接地址，便宜机场推荐">3月29日21M/S|V2ray/Clash/SSR/Shadowrocket免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-81552.htm" title="猫三联要隔多久打一针（猫三联要隔多久打一针才有效）">猫三联要隔多久打一针（猫三联要隔多久打一针才有效）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+               </div>
+            </div>
+        </div>
+    </div>
+    <!-- about sectuion end -->
+        <!-- copyright section start -->
+    <div class="copyright_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="copyright_text">
+                        ClashFans官网订阅站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- copyright section end -->
+    <!-- Javascript files-->
+    <script src="/assets/website/js/frontend/clashfans/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/jquery-3.0.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/plugin.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
