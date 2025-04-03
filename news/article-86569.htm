@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xml:lang="zh-CN" lang="zh-CN">
+
+<head>
+       <link rel="canonical" href="https://clashfans.github.io/news/article-86569.htm" />
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="/assets/website/img/clashfans/favicon.ico" type="image/x-icon"/>
+    <!-- site metas -->
+    <title>使用jQuery实现table的分页</title>
+        <meta name="description" content="一、创建一个表格如下： 	&lt;table cellspacing="0"&gt;         &lt;thead&gt;           &lt;tr&gt;             &l" />
+    
+    <meta name="author" content="ClashFans官网订阅站">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashfans.github.io/news/article-86569.htm" />
+    <meta property="og:site_name" content="ClashFans官网订阅站" />
+    <meta property="og:title" content="使用jQuery实现table的分页" />
+    <meta property="og:image" content="https://clashfans.github.io/uploads/20240307/b6740ad9953165fbf14c2cb3dbecc16f.webp" />
+        <meta property="og:release_date" content="2025-04-02T07:43:25" />
+    <meta property="og:updated_time" content="2025-04-02T07:43:25" />
+        <meta property="og:description" content="一、创建一个表格如下： 	&lt;table cellspacing="0"&gt;         &lt;thead&gt;           &lt;tr&gt;             &l" />
+        
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="使用jQuery实现table的分页">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdn.bootcdn.net">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="/assets/website/css/clashfans/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/responsive.css">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashfans/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P01PJ0V63S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P01PJ0V63S');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+       <!-- header section start -->
+    <div class="header_section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="logo">
+                                        <a href="/">Clash Fans</a>
+                                    </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/">首页</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/free-nodes/">免费节点</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/paid-subscribe/">推荐机场</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/client.htm">客户端</a>
+                        </li>
+                                                <li class="nav-item">
+                            <a class="nav-link" href="/news/">新闻资讯</a>
+                        </li>
+                                            </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- header section end -->
+      <!-- services section start -->
+      <div class="services_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="services_taital"><span class="about_icon">使用jQuery实现table的分页 </h1>
+                    <p class="nav-box text-center">
+                        <a href="/">首页</a> / <a href="/news/">新闻资讯</span>
+                    </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- services section end -->
+    <!-- about sectuion start -->
+    <div class="about_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="" data-url="">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> </h1> <h3> <a id="_1" rel="nofollow"></a>一、创建一个表格如下：</h3> <pre><code class="prism language-javascript">	<span class="token operator">&lt;</span>table cellspacing<span class="token operator">=</span><span class="token string">"0"</span><span class="token operator">&gt;</span>         <span class="token operator">&lt;</span>thead<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>tr<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>th<span class="token operator">&gt;</span>编号<span class="token operator">&lt;</span><span class="token operator">/</span>th<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>th<span class="token operator">&gt;</span>姓名<span class="token operator">&lt;</span><span class="token operator">/</span>th<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>th<span class="token operator">&gt;</span>排行<span class="token operator">&lt;</span><span class="token operator">/</span>th<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span><span class="token operator">/</span>tr<span class="token operator">&gt;</span>         <span class="token operator">&lt;</span><span class="token operator">/</span>thead<span class="token operator">&gt;</span>         <span class="token operator">&lt;</span>tbody<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>tr<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span><span class="token number">1</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>刘一<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>老大<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span><span class="token operator">/</span>tr<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>tr<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span><span class="token number">2</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>陈二<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>老二<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span><span class="token operator">/</span>tr<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>tr<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span><span class="token number">3</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>张三<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>老三<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span><span class="token operator">/</span>tr<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>tr<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span><span class="token number">4</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>李四<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>老四<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span><span class="token operator">/</span>tr<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>tr<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span><span class="token number">5</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>王五<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>老五<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span><span class="token operator">/</span>tr<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>tr<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span><span class="token number">6</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>赵六<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>老六<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span><span class="token operator">/</span>tr<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>tr<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span><span class="token number">7</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>孙七<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>老七<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span><span class="token operator">/</span>tr<span class="token operator">&gt;</span>          <span class="token operator">&lt;</span>tr<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span><span class="token number">8</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>周八<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>老八<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span><span class="token operator">/</span>tr<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>tr<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span><span class="token number">9</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>吴九<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>老九<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span><span class="token operator">/</span>tr<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span>tr<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span><span class="token number">10</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>郑十<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>             <span class="token operator">&lt;</span>td<span class="token operator">&gt;</span>老十<span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">&gt;</span>           <span class="token operator">&lt;</span><span class="token operator">/</span>tr<span class="token operator">&gt;</span>                    <span class="token operator">&lt;</span><span class="token operator">/</span>tbody<span class="token operator">&gt;</span>              <span class="token operator">&lt;</span><span class="token operator">/</span>table<span class="token operator">&gt;</span> </code></pre> <p>运行结果：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/fa86da3ce9f9b973a2c5f1f525bd5db1.jpg" alt="使用jQuery实现table的分页"></p> <h3> <a id="jQuery_jquery1113minjsscript_69" rel="nofollow"></a>二、引入jQuery包： jquery-1.11.3.min.js与script</h3> <p><mark><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.veryhuo.com/down/html/115961.html"  rel="nofollow">jquery-1.11.3.min.js 脚本 上网可下载</a></mark></p> <pre><code class="prism language-javascript">  <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"js/jquery-1.11.3.min.js"</span> type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span> 	    <span class="token operator">&lt;</span>script  type<span class="token operator">=</span><span class="token string">"text/javascript"</span><span class="token operator">&gt;</span>         <span class="token function">$</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>            <span class="token keyword">var</span> $table <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'table'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token keyword">var</span> currentPage <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token comment">//当前页默认值为0  </span>          <span class="token keyword">var</span> pageSize <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span><span class="token comment">//每一页显示的数目  </span>          $table<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token string">'paging'</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                $table<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">'tbody tr'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>currentPage<span class="token operator">*</span>pageSize<span class="token punctuation">,</span><span class="token punctuation">(</span>currentPage<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">*</span>pageSize<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                 <span class="token keyword">var</span> sumRows <span class="token operator">=</span> $table<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">'tbody tr'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>            <span class="token keyword">var</span> sumPages <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span>sumRows<span class="token operator">/</span>pageSize<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//总页数  </span>                      <span class="token keyword">var</span> $pager <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'&lt;div class="page"&gt;&lt;/div&gt;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">//新建div，放入a标签,显示底部分页码  </span>          <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> pageIndex <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> pageIndex<span class="token operator">&lt;</span>sumPages <span class="token punctuation">;</span> pageIndex<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'&lt;a href="#" id="pageStyle" onclick="changCss(this)"&gt;&lt;span&gt;'</span><span class="token operator">+</span><span class="token punctuation">(</span>pageIndex<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'&lt;/span&gt;&lt;/a&gt;'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span><span class="token punctuation">{<!-- --></span><span class="token string">"newPage"</span><span class="token punctuation">:</span>pageIndex<span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>                    currentPage <span class="token operator">=</span> event<span class="token punctuation">.</span>data<span class="token punctuation">[</span><span class="token string">"newPage"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>                    $table<span class="token punctuation">.</span><span class="token function">trigger</span><span class="token punctuation">(</span><span class="token string">"paging"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                      <span class="token comment">//触发分页函数  </span>                  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">appendTo</span><span class="token punctuation">(</span>$pager<span class="token punctuation">)</span><span class="token punctuation">;</span>                    $pager<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token punctuation">}</span>                   $pager<span class="token punctuation">.</span><span class="token function">insertAfter</span><span class="token punctuation">(</span>$table<span class="token punctuation">)</span><span class="token punctuation">;</span>                $table<span class="token punctuation">.</span><span class="token function">trigger</span><span class="token punctuation">(</span><span class="token string">"paging"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                                <span class="token comment">//默认第一页的a标签效果  </span>              <span class="token keyword">var</span> $pagess <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span><span class="token string">'#pageStyle'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>                <span class="token comment">//$pagess[0].style.backgroundColor="#006B00";  </span>              <span class="token comment">//$pagess[0].style.color="#ffffff";  </span>     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>              <span class="token comment">//a链接点击变色，再点其他回复原色  </span>       <span class="token keyword">function</span> <span class="token function">changCss</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>           <span class="token keyword">var</span> arr <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>               <span class="token keyword">if</span><span class="token punctuation">(</span>obj<span class="token operator">==</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span>       <span class="token comment">//当前页样式  </span>           obj<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor<span class="token operator">=</span><span class="token string">"#006B00"</span><span class="token punctuation">;</span>             obj<span class="token punctuation">.</span>style<span class="token punctuation">.</span>color<span class="token operator">=</span><span class="token string">"#ffffff"</span><span class="token punctuation">;</span>           <span class="token punctuation">}</span>            <span class="token keyword">else</span>            <span class="token punctuation">{<!-- --></span>              arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>color<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">;</span>              arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">;</span>            <span class="token punctuation">}</span>           <span class="token punctuation">}</span>        <span class="token punctuation">}</span>         <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span>  </code></pre> <h3> <a id="_120" rel="nofollow"></a>三、表格样式和分页样式</h3> <pre><code class="prism language-javascript"><span class="token operator">&lt;</span>style  type<span class="token operator">=</span><span class="token string">"text/css"</span><span class="token operator">&gt;</span>        table<span class="token punctuation">{<!-- --></span>            width<span class="token punctuation">:</span><span class="token number">600</span>px<span class="token punctuation">;</span>            text<span class="token operator">-</span>align<span class="token punctuation">:</span>center<span class="token punctuation">;</span>            <span class="token punctuation">}</span>        table tr th<span class="token punctuation">,</span>td<span class="token punctuation">{<!-- --></span>            height<span class="token punctuation">:</span><span class="token number">30</span>px<span class="token punctuation">;</span>            line<span class="token operator">-</span>height<span class="token punctuation">:</span><span class="token number">30</span>px<span class="token punctuation">;</span>            border<span class="token punctuation">:</span><span class="token number">1</span>px solid #ccc<span class="token punctuation">;</span>            <span class="token punctuation">}</span>         #pageStyle<span class="token punctuation">{<!-- --></span>            display<span class="token punctuation">:</span>inline<span class="token operator">-</span>block<span class="token punctuation">;</span>            width<span class="token punctuation">:</span><span class="token number">32</span>px<span class="token punctuation">;</span>            height<span class="token punctuation">:</span><span class="token number">32</span>px<span class="token punctuation">;</span>            border<span class="token punctuation">:</span><span class="token number">1</span>px solid #<span class="token constant">CCC</span><span class="token punctuation">;</span>            line<span class="token operator">-</span>height<span class="token punctuation">:</span><span class="token number">32</span>px<span class="token punctuation">;</span>            text<span class="token operator">-</span>align<span class="token punctuation">:</span>center<span class="token punctuation">;</span>            color<span class="token punctuation">:</span>#<span class="token number">999</span><span class="token punctuation">;</span>            margin<span class="token operator">-</span>top<span class="token punctuation">:</span><span class="token number">20</span>px<span class="token punctuation">;</span>            text<span class="token operator">-</span>decoration<span class="token punctuation">:</span>none<span class="token punctuation">;</span>                   <span class="token punctuation">}</span>         #pageStyle<span class="token punctuation">:</span>hover<span class="token punctuation">{<!-- --></span>             background<span class="token operator">-</span>color<span class="token punctuation">:</span>#<span class="token constant">CCC</span><span class="token punctuation">;</span>             <span class="token punctuation">}</span>         #pageStyle <span class="token punctuation">.</span>active<span class="token punctuation">{<!-- --></span>             background<span class="token operator">-</span>color<span class="token punctuation">:</span>#<span class="token number">0</span>CF<span class="token punctuation">;</span>             color<span class="token punctuation">:</span>#ffffff<span class="token punctuation">;</span>             <span class="token punctuation">}</span>             <span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">&gt;</span>  </code></pre> <p>最终结果：</p> <p><img decoding="async" src="http://img.555519.xyz/uploads/20230207/3e48aae5064411690b71273663547fce.jpg" alt="使用jQuery实现table的分页"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/d35535b48e3885e4a0cf6451c0f96922.jpg" alt="使用jQuery实现table的分页"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/0f8b733be77484e9471ef6407653d49f.jpg" alt="使用jQuery实现table的分页"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230207/d334bf716dce460ecbce3cf173ad4f32.jpg" alt="使用jQuery实现table的分页"></p> <h3> <a id="jquery1113minjs_159" rel="nofollow"></a><a href="" rel="nofollow">jquery-1.11.3.min.js</a><br /> </h3> <hr/> <h2> <a id="_161" rel="nofollow"></a>友情链接：</h2> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_43972758/article/details/86523710"  rel="nofollow">ASP.NET MVC零基础自学篇：（一）ASP.NET MVC简介</a></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_43972758/article/details/86534258"  rel="nofollow">ASP.NET Razor篇——标记</a></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_43972758/article/details/85319239"  rel="nofollow">C#将Excel表格内容导入数据库–ASP.NET MVC</a></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_43972758/article/details/85323124"  rel="nofollow"> JQuery ajax 实现关闭弹窗，刷新列表</a></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_43972758/article/details/86229519"  rel="nofollow">ASP.NET MVC的 Action跳转方法归纳部分</a></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_43972758/article/details/85987143"  rel="nofollow"> jQuery实现checkbox多选，单选与数据库交互传值，赋值整理</a></p> <p><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://blog.csdn.net/weixin_43972758/article/details/86308592"  rel="nofollow">C# String字符串方法的使用归纳(直观，粗暴)</a></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-85848.htm">肉冻的做法（东北皮肉冻的做法）</a></p>
+                                        <p>下一个：<a href="/news/article-86570.htm">mysql 窗口函数</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                  <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-70752.htm" title="宠物美容学校沈阳（沈阳学宠物美容技术大概要多少钱）">宠物美容学校沈阳（沈阳学宠物美容技术大概要多少钱）</a></li>
+                        <li class="py-2"><a href="/news/article-86569.htm" title="使用jQuery实现table的分页">使用jQuery实现table的分页</a></li>
+                        <li class="py-2"><a href="/news/article-82992.htm" title="普通狗粮多少钱一斤（狗粮多少钱一斤算好）">普通狗粮多少钱一斤（狗粮多少钱一斤算好）</a></li>
+                        <li class="py-2"><a href="/news/article-71408.htm" title="安安宠物医院金平路（安安宠物医院营业时间）">安安宠物医院金平路（安安宠物医院营业时间）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-3-free-v2ray-subscribe.htm" title="4月3日22.7M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新链接地址，便宜机场推荐">4月3日22.7M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-87291.htm" title="深圳哪有宠物领养中心 深圳哪有宠物领养中心啊">深圳哪有宠物领养中心 深圳哪有宠物领养中心啊</a></li>
+                        <li class="py-2"><a href="/news/article-68803.htm" title="feign post 参数对象不加@RequestBody的用法">feign post 参数对象不加@RequestBody的用法</a></li>
+                        <li class="py-2"><a href="/news/article-81553.htm" title="成都宠物运输公司电话（成都宠物托运成都宠物托运信息）">成都宠物运输公司电话（成都宠物托运成都宠物托运信息）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-clash-node.htm" title="3月31日18.2M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新链接地址，便宜机场推荐">3月31日18.2M/S|SSR/Clash/V2ray/Shadowrocket免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/news/article-82283.htm" title="宠物粮食销售方法 宠物粮食销售方法有哪些">宠物粮食销售方法 宠物粮食销售方法有哪些</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">90</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+
+               </div>
+            </div>
+        </div>
+    </div>
+    <!-- about sectuion end -->
+        <!-- copyright section start -->
+    <div class="copyright_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                    <p class="copyright_text">
+                        ClashFans官网订阅站 版权所有
+                        <br />
+                        Powered by WordPress
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- copyright section end -->
+    <!-- Javascript files-->
+    <script src="/assets/website/js/frontend/clashfans/jquery.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/popper.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/bootstrap.bundle.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/jquery-3.0.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashfans/plugin.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script><script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
