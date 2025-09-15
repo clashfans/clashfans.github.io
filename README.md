@@ -1,4 +1,4 @@
-# 9月9日21.9M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新链接地址，便宜机场推荐  更新时间 2025-09-09 09:09:24
+# 9月15日21.7M/S|Shadowrocket/V2ray/Clash/SSR免费节点每天更新链接地址，便宜机场推荐  更新时间 2025-09-15 10:30:04
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashfans.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://clashfans.github.io/uploads/2025/09/0-20250909.yaml
-- https://clashfans.github.io/uploads/2025/09/1-20250909.yaml
-- https://clashfans.github.io/uploads/2025/09/2-20250909.yaml
-- https://clashfans.github.io/uploads/2025/09/3-20250909.yaml
-- https://clashfans.github.io/uploads/2025/09/4-20250909.yaml
+- https://clashfans.github.io/uploads/2025/09/0-20250915.yaml
+- https://clashfans.github.io/uploads/2025/09/1-20250915.yaml
+- https://clashfans.github.io/uploads/2025/09/2-20250915.yaml
+- https://clashfans.github.io/uploads/2025/09/3-20250915.yaml
+- https://clashfans.github.io/uploads/2025/09/4-20250915.yaml
 
 ### V2ray订阅链接
 
-- https://clashfans.github.io/uploads/2025/09/0-20250909.txt
-- https://clashfans.github.io/uploads/2025/09/1-20250909.txt
-- https://clashfans.github.io/uploads/2025/09/2-20250909.txt
-- https://clashfans.github.io/uploads/2025/09/3-20250909.txt
-- https://clashfans.github.io/uploads/2025/09/4-20250909.txt
+- https://clashfans.github.io/uploads/2025/09/0-20250915.txt
+- https://clashfans.github.io/uploads/2025/09/1-20250915.txt
+- https://clashfans.github.io/uploads/2025/09/2-20250915.txt
+- https://clashfans.github.io/uploads/2025/09/3-20250915.txt
+- https://clashfans.github.io/uploads/2025/09/4-20250915.txt
 
 ### Sing-box订阅链接
 
-- https://clashfans.github.io/uploads/2025/09/20250909.json
+- https://clashfans.github.io/uploads/2025/09/20250915.json
 
 ## 更多clash节点订阅 ：
 
