@@ -366,9 +366,34 @@ clash
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 的 PAC 模式如何优化访问？</h5></div>
+    <div class="panel-body">
+        PAC 模式可根据规则动态判断流量是否走代理，无需手动切换节点。适合国内外混合访问场景，提高访问速度和稳定性，减少误操作导致的访问失败。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + XTLS 对高延迟网络有哪些优化？</h5></div>
+    <div class="panel-body">
+        XTLS 模式减少握手和加密开销，适合高延迟或不稳定网络环境。结合策略组和节点切换，可提高网页浏览、视频播放和游戏的稳定性和流畅度，改善用户体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan 的伪装域名有什么要求？</h5></div>
     <div class="panel-body">
         Trojan 的伪装域名必须是可以通过 HTTPS 正常访问的真实网站，并且 SSL 证书有效。伪装域名用于与服务器证书匹配，使得流量在外观上完全与正常 HTTPS 请求一致。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>SSR 的协议插件如何应对封锁？</h5></div>
+    <div class="panel-body">
+        协议插件可隐藏真实通信特征，将流量伪装成正常 HTTP 或 TLS 数据。结合混淆方式使用，可以有效降低被 DPI 检测或封锁的风险，提高节点稳定性和长期可用性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekobox 如何分流多协议流量？</h5></div>
+    <div class="panel-body">
+        Nekobox 可以同时管理 Shadowsocks、VMess、Trojan 等多协议节点，通过策略组将不同流量分配到指定节点，实现精准分流，提高网络效率和管理便利性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash.Meta 与原版 Clash 有何不同？</h5></div>
+    <div class="panel-body">
+        Clash.Meta 是社区优化版本，支持更多传输协议，如 Hysteria、TUIC、Reality 等。它还增强了 DNS 处理逻辑和脚本分流能力，适合追求极致速度和灵活规则配置的高级用户。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Surfboard 的策略组可以根据延迟自动切换节点吗？</h5></div>
@@ -381,39 +406,14 @@ clash
         多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适合高频短连接应用，如游戏和即时通讯，可提高吞吐量和连接稳定性，优化网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 如何分流多协议流量？</h5></div>
+    <div class="panel-heading"><h5>SSR 的端口复用有什么风险？</h5></div>
     <div class="panel-body">
-        Nekobox 可以同时管理 Shadowsocks、VMess、Trojan 等多协议节点，通过策略组将不同流量分配到指定节点，实现精准分流，提高网络效率和管理便利性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 对高延迟网络有哪些优化？</h5></div>
-    <div class="panel-body">
-        XTLS 模式减少握手和加密开销，适合高延迟或不稳定网络环境。结合策略组和节点切换，可提高网页浏览、视频播放和游戏的稳定性和流畅度，改善用户体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash.Meta 与原版 Clash 有何不同？</h5></div>
-    <div class="panel-body">
-        Clash.Meta 是社区优化版本，支持更多传输协议，如 Hysteria、TUIC、Reality 等。它还增强了 DNS 处理逻辑和脚本分流能力，适合追求极致速度和灵活规则配置的高级用户。<hr />    </div>
+        SSR 支持多端口配置以复用服务，但若端口过多或设置冲突，可能被扫描工具识别或误判为异常服务。建议保持配置简洁，并合理分配端口范围以减少暴露风险。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的混淆参数如何选择才能兼顾速度与隐蔽性？</h5></div>
     <div class="panel-body">
-        混淆参数建议根据网络环境选择，一般 http_simple 兼容性最好，tls1.2_ticket_auth 隐蔽性更强。若节点在国内访问，选择简单混淆可提升速度，若跨境访问频繁则推荐 TLS 混淆提高安全性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的协议插件如何应对封锁？</h5></div>
-    <div class="panel-body">
-        协议插件可隐藏真实通信特征，将流量伪装成正常 HTTP 或 TLS 数据。结合混淆方式使用，可以有效降低被 DPI 检测或封锁的风险，提高节点稳定性和长期可用性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的 PAC 模式如何优化访问？</h5></div>
-    <div class="panel-body">
-        PAC 模式可根据规则动态判断流量是否走代理，无需手动切换节点。适合国内外混合访问场景，提高访问速度和稳定性，减少误操作导致的访问失败。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 的端口复用有什么风险？</h5></div>
-    <div class="panel-body">
-        SSR 支持多端口配置以复用服务，但若端口过多或设置冲突，可能被扫描工具识别或误判为异常服务。建议保持配置简洁，并合理分配端口范围以减少暴露风险。    </div>
+        混淆参数建议根据网络环境选择，一般 http_simple 兼容性最好，tls1.2_ticket_auth 隐蔽性更强。若节点在国内访问，选择简单混淆可提升速度，若跨境访问频繁则推荐 TLS 混淆提高安全性。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -442,16 +442,16 @@ clash
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-10-27-clash-windows.htm" title="10月27日20.5M/S|Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点免费节点每天更新链接地址，便宜机场推荐">10月27日20.5M/S|Singbox节点/Shadowrocket节点/SSR节点/V2ray节点/Clash节点免费节点每天更新链接地址，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-25-free-node-subscribe.htm" title="10月25日21.4M/S|V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">10月25日21.4M/S|V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-19-free-clash-subscribe.htm" title="10月19日21.3M/S|Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">10月19日21.3M/S|Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-6-free-shadowrocket-node.htm" title="11月6日20M/S|SSR节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐">11月6日20M/S|SSR节点/Shadowrocket节点/Clash节点/Singbox节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-11-clash-node.htm" title="10月11日20.7M/S|Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">10月11日20.7M/S|Clash节点/Shadowrocket节点/V2ray节点/SSR节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-19-clash-node.htm" title="11月19日20.1M/S|SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点免费节点每天更新链接地址，便宜机场推荐">11月19日20.1M/S|SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-12-free-node-subscribe.htm" title="11月12日18.9M/S|V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点免费节点每天更新链接地址，便宜机场推荐">11月12日18.9M/S|V2ray节点/Singbox节点/SSR节点/Shadowrocket节点/Clash节点免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-16-free-v2ray.htm" title="10月16日19.2M/S|Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐">10月16日19.2M/S|Clash节点/Singbox节点/Shadowrocket节点/SSR节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-18-clash-windows.htm" title="10月18日22.6M/S|V2ray节点/Shadowrocket节点/Singbox节点/SSR节点/Clash节点免费节点每天更新链接地址，便宜机场推荐">10月18日22.6M/S|V2ray节点/Shadowrocket节点/Singbox节点/SSR节点/Clash节点免费节点每天更新链接地址，便宜机场推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-11-free-ssr-subscribe.htm" title="11月11日18.7M/S|SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">11月11日18.7M/S|SSR节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-10-3-free-v2ray-subscribe.htm" title="10月3日20.7M/S|Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐">10月3日20.7M/S|Shadowrocket节点/SSR节点/Singbox节点/Clash节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-7-node-share.htm" title="11月7日22.8M/S|V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">11月7日22.8M/S|V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-5-free-subscribe-node.htm" title="11月5日20.4M/S|Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐">11月5日20.4M/S|Singbox节点/Clash节点/SSR节点/Shadowrocket节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-1-free-clash.htm" title="11月1日20.6M/S|Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费节点每天更新链接地址，便宜机场推荐">11月1日20.6M/S|Clash节点/Singbox节点/V2ray节点/SSR节点/Shadowrocket节点免费节点每天更新链接地址，便宜机场推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-31-clash-node-daily-updates.htm" title="10月31日18.1M/S|Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点免费节点每天更新链接地址，便宜机场推荐">10月31日18.1M/S|Singbox节点/V2ray节点/SSR节点/Shadowrocket节点/Clash节点免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-4-free-ssr-subscribe.htm" title="11月4日20.3M/S|Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费节点每天更新链接地址，便宜机场推荐">11月4日20.3M/S|Singbox节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-15-clash-node.htm" title="11月15日19.4M/S|Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点免费节点每天更新链接地址，便宜机场推荐">11月15日19.4M/S|Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点免费节点每天更新链接地址，便宜机场推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-10-13-node-share-links.htm" title="10月13日21.6M/S|V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">10月13日21.6M/S|V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -463,7 +463,7 @@ clash
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">16</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
