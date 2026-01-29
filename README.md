@@ -1,4 +1,4 @@
-# 1月22日21.4M/S|Shadowrocket节点/Clash节点/V2ray节点/Singbox节点/SSR节点免费节点每天更新链接地址，便宜机场推荐  更新时间 2026-01-22 10:33:17
+# 1月29日20.5M/S|V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐  更新时间 2026-01-29 09:43:23
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashfans.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://clashfans.github.io/uploads/2026/01/0-20260122.yaml
-- https://clashfans.github.io/uploads/2026/01/1-20260122.yaml
-- https://clashfans.github.io/uploads/2026/01/2-20260122.yaml
-- https://clashfans.github.io/uploads/2026/01/3-20260122.yaml
-- https://clashfans.github.io/uploads/2026/01/4-20260122.yaml
+- https://clashfans.github.io/uploads/2026/01/0-20260129.yaml
+- https://clashfans.github.io/uploads/2026/01/1-20260129.yaml
+- https://clashfans.github.io/uploads/2026/01/2-20260129.yaml
+- https://clashfans.github.io/uploads/2026/01/3-20260129.yaml
+- https://clashfans.github.io/uploads/2026/01/4-20260129.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://clashfans.github.io/uploads/2026/01/0-20260122.txt
-- https://clashfans.github.io/uploads/2026/01/1-20260122.txt
-- https://clashfans.github.io/uploads/2026/01/2-20260122.txt
-- https://clashfans.github.io/uploads/2026/01/3-20260122.txt
-- https://clashfans.github.io/uploads/2026/01/4-20260122.txt
+- https://clashfans.github.io/uploads/2026/01/0-20260129.txt
+- https://clashfans.github.io/uploads/2026/01/1-20260129.txt
+- https://clashfans.github.io/uploads/2026/01/2-20260129.txt
+- https://clashfans.github.io/uploads/2026/01/3-20260129.txt
+- https://clashfans.github.io/uploads/2026/01/4-20260129.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://clashfans.github.io/uploads/2026/01/20260122.json
+- https://clashfans.github.io/uploads/2026/01/20260129.json
 
 ## 更多Clash节点订阅 ：
 
