@@ -288,41 +288,6 @@ Clash爱人支持Windows、macOS和Linux，覆盖主流电脑操作系统，适�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Mellow 的 TUN 模式是否支持全局游戏加速？</h5></div>
-    <div class="panel-body">
-        支持。TUN 模式拦截系统 IP 层流量，实现全局代理，确保游戏和其他应用的 UDP/TCP 流量都走代理节点，从而降低延迟，提高游戏体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + XTLS 模式在高并发下有什么优势？</h5></div>
-    <div class="panel-body">
-        XTLS 模式减少握手次数和加密冗余，提高 CPU 利用率和吞吐量。在高并发场景下能保持连接稳定，适合游戏、流媒体和频繁请求的网络环境，提升整体性能。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 节点延迟排序如何优化网络体验？</h5></div>
-    <div class="panel-body">
-        Matsuri 会定期测速节点延迟，并结合策略组自动选择低延迟节点。无需手动切换，确保网页、视频和游戏流量通过最优节点，提高访问速度和网络稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>如何在 V2Ray 中自定义路由规则？</h5></div>
-    <div class="panel-body">
-        在 V2Ray 中可以通过修改 config.json 文件中的 routing 部分来自定义路由规则。用户可以根据 IP 段、域名或地理位置来决定流量的去向，从而实现自动分流或访问加速的效果。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>PassWall2 如何通过策略组提升科学上网体验？</h5></div>
-    <div class="panel-body">
-        PassWall2 结合策略组和延迟检测功能，可自动选择最优节点处理网页、视频和游戏流量。无需手动切换，保证访问速度、稳定性和整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hysteria2 的多路复用功能有哪些优势？</h5></div>
-    <div class="panel-body">
-        多路复用允许多个请求共享同一 QUIC 连接，减少握手次数和延迟。高并发情况下可以提升吞吐量和稳定性，特别适合短连接频繁请求的应用，如游戏或即时通讯。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 如何设置用户带宽与流量配额？</h5></div>
-    <div class="panel-body">
-        管理员可为每个用户单独设置带宽和流量上限。超出限制时，可自动降速或阻止访问，确保服务器资源合理分配，避免单用户占用过多带宽，提高整体网络公平性和效率。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Nekoray 如何实现节点延迟自动切换？</h5></div>
     <div class="panel-body">
         Nekoray 支持配置策略组（Policy Group），用户可设置 URL 测试或周期检测机制，根据延迟自动选择最优节点。此功能能提升稳定性，尤其适合多线路机场订阅用户。<hr />    </div>
@@ -333,9 +298,44 @@ Clash爱人支持Windows、macOS和Linux，覆盖主流电脑操作系统，适�
         Shadowrocket 测量节点延迟和丢包率，将延迟低的节点优先使用。结合策略组和分流规则，可提升网页浏览、视频播放和游戏的访问速度和稳定性，优化整体网络体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Hysteria2 的多路复用功能有哪些优势？</h5></div>
+    <div class="panel-body">
+        多路复用允许多个请求共享同一 QUIC 连接，减少握手次数和延迟。高并发情况下可以提升吞吐量和稳定性，特别适合短连接频繁请求的应用，如游戏或即时通讯。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Matsuri 节点延迟排序如何优化网络体验？</h5></div>
+    <div class="panel-body">
+        Matsuri 会定期测速节点延迟，并结合策略组自动选择低延迟节点。无需手动切换，确保网页、视频和游戏流量通过最优节点，提高访问速度和网络稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 多路复用如何优化短连接性能？</h5></div>
     <div class="panel-body">
-        多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适用于游戏、即时通讯等高频短连接场景，提高吞吐量和连接稳定性，优化整体网络体验。    </div>
+        多路复用允许多个短连接共享同一通道，减少握手延迟和资源消耗。适用于游戏、即时通讯等高频短连接场景，提高吞吐量和连接稳定性，优化整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + XTLS 模式在高并发下有什么优势？</h5></div>
+    <div class="panel-body">
+        XTLS 模式减少握手次数和加密冗余，提高 CPU 利用率和吞吐量。在高并发场景下能保持连接稳定，适合游戏、流媒体和频繁请求的网络环境，提升整体性能。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>PassWall2 如何通过策略组提升科学上网体验？</h5></div>
+    <div class="panel-body">
+        PassWall2 结合策略组和延迟检测功能，可自动选择最优节点处理网页、视频和游戏流量。无需手动切换，保证访问速度、稳定性和整体网络体验。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何在 V2Ray 中自定义路由规则？</h5></div>
+    <div class="panel-body">
+        在 V2Ray 中可以通过修改 config.json 文件中的 routing 部分来自定义路由规则。用户可以根据 IP 段、域名或地理位置来决定流量的去向，从而实现自动分流或访问加速的效果。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Hiddify Next 如何设置用户带宽与流量配额？</h5></div>
+    <div class="panel-body">
+        管理员可为每个用户单独设置带宽和流量上限。超出限制时，可自动降速或阻止访问，确保服务器资源合理分配，避免单用户占用过多带宽，提高整体网络公平性和效率。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Mellow 的 TUN 模式是否支持全局游戏加速？</h5></div>
+    <div class="panel-body">
+        支持。TUN 模式拦截系统 IP 层流量，实现全局代理，确保游戏和其他应用的 UDP/TCP 流量都走代理节点，从而降低延迟，提高游戏体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -383,16 +383,16 @@ Clash爱人支持Windows、macOS和Linux，覆盖主流电脑操作系统，适�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-9-2-free-clash.htm" title="9月2日19M/S|Singbox节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐">9月2日19M/S|Singbox节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-8-21.htm" title="8月21日22.2M/S|SSR节点/Singbox节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点免费节点每天更新链接地址，便宜机场推荐">8月21日22.2M/S|SSR节点/Singbox节点/V2ray节点/Trojan节点/Clash节点/Shadowrocket节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-18-free-ssr-subscribe.htm" title="8月18日20.9M/S|V2ray节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">8月18日20.9M/S|V2ray节点/SSR节点/Clash节点/Trojan节点/Shadowrocket节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-22-clash-node.htm" title="8月22日18.9M/S|Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点免费节点每天更新链接地址，便宜机场推荐">8月22日18.9M/S|Trojan节点/Singbox节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-14-node-share.htm" title="8月14日18.8M/S|V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐">8月14日18.8M/S|V2ray节点/Clash节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-24-clash-node-daily-updates.htm" title="8月24日18.2M/S|Singbox节点/Shadowrocket节点/SSR节点/Clash节点/Trojan节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐">8月24日18.2M/S|Singbox节点/Shadowrocket节点/SSR节点/Clash节点/Trojan节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-10-free-clash.htm" title="8月10日20.3M/S|Trojan节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">8月10日20.3M/S|Trojan节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-v2ray-subscribe-2026-8-15.htm" title="8月15日21M/S|V2ray节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐">8月15日21M/S|V2ray节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-node-subscribe-links-2026-8-13.htm" title="8月13日21.5M/S|V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">8月13日21.5M/S|V2ray节点/Shadowrocket节点/Trojan节点/SSR节点/Clash节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-12-free-shadowrocket-node.htm" title="8月12日21.9M/S|Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">8月12日21.9M/S|Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-30-free-v2ray.htm" title="8月30日19.5M/S|SSR节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">8月30日19.5M/S|SSR节点/Trojan节点/V2ray节点/Clash节点/Shadowrocket节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/2026-8-26-free-clash.htm" title="8月26日20.7M/S|V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点免费节点每天更新链接地址，便宜机场推荐">8月26日20.7M/S|V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点/SSR节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-ssr-node-2026-8-7.htm" title="8月7日20.7M/S|SSR节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/Clash节点免费节点每天更新链接地址，便宜机场推荐">8月7日20.7M/S|SSR节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/Clash节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-8-23.htm" title="8月23日21.5M/S|SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐">8月23日21.5M/S|SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-8-free-clash.htm" title="8月8日19.2M/S|SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点/Clash节点免费节点每天更新链接地址，便宜机场推荐">8月8日19.2M/S|SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Trojan节点/Clash节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-8-29.htm" title="8月29日21.5M/S|V2ray节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐">8月29日21.5M/S|V2ray节点/SSR节点/Clash节点/Singbox节点/Shadowrocket节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-25.htm" title="8月25日19.9M/S|Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点免费节点每天更新链接地址，便宜机场推荐">8月25日19.9M/S|Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-2-free-clash.htm" title="9月2日19M/S|Singbox节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐">9月2日19M/S|Singbox节点/Shadowrocket节点/Clash节点/SSR节点/Trojan节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-windows-2026-9-3.htm" title="9月3日21M/S|Trojan节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点免费节点每天更新链接地址，便宜机场推荐">9月3日21M/S|Trojan节点/Clash节点/Shadowrocket节点/Singbox节点/V2ray节点/SSR节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -404,10 +404,10 @@ Clash爱人支持Windows、macOS和Linux，覆盖主流电脑操作系统，适�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">2</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>

@@ -159,39 +159,18 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
 <p style="margin-bottom:3rem;color:#999;font-style:italic;">注：跳转链接可能会 <b style="color:red;">被墙</b> ，如多次打开失败，请先使用下面不稳定免费订阅后，再尝试点击链接</p><p>&nbsp;</p><p></p><h2>订阅链接</h2><p>&nbsp;</p><p><strong>clash订阅链接</strong></p><p>https://clashfans.github.io/uploads/2026/08/0-20260806.yaml</p><p>https://clashfans.github.io/uploads/2026/08/2-20260806.yaml</p><p>https://clashfans.github.io/uploads/2026/08/3-20260806.yaml</p><p>https://clashfans.github.io/uploads/2026/08/4-20260806.yaml</p><p>&nbsp;</p><p><strong>v2ray订阅链接:</strong></p><p>https://clashfans.github.io/uploads/2026/08/0-20260806.txt</p><p>https://clashfans.github.io/uploads/2026/08/2-20260806.txt</p><p>https://clashfans.github.io/uploads/2026/08/3-20260806.txt</p><p>https://clashfans.github.io/uploads/2026/08/4-20260806.txt</p><p><strong>sing-box订阅链接</strong></p><p>https://clashfans.github.io/uploads/2026/08/20260806.json</p><p>&nbsp;</p><p>如果您需要高质量的付费服务,我们强烈推荐您试试「<a href="https://mmm.happymao.cat/#/register?code=OMZAblTs" class="js_to" data-url="https://mmm.happymao.cat/#/register?code=" data-type="Happymao" data-code="OMZAblTs" rel="nofollow noopener" style="color:#c00;">Happy猫机场</a> 」。提供全球范围内快速稳定的高速节点,轻松处理8K高清视频流量,并可解锁流媒体网站和chatGPT。其服务器性能出色,确保您享受到高品质的体验。</p><h2>服务器重启后V2Ray失效的深度诊断与全面修复指南</h2>  <p>在当今互联网环境中，V2Ray作为一款功能强大的代理工具，因其出色的隐私保护和灵活的协议支持而广受欢迎。然而，许多用户在实际使用过程中都会遇到一个令人困扰的问题——服务器重启后V2Ray突然"罢工"。这种情况不仅影响工作效率，还可能造成重要数据传输中断。本文将深入剖析这一问题的根源，并提供一套完整的解决方案，帮助您快速恢复服务并预防类似情况再次发生。</p>  <h2>一、V2Ray核心机制与重启失效的关联性分析</h2>  <p>V2Ray之所以能在代理工具领域占据重要地位，得益于其多协议支持（如VMess、Shadowsocks）和先进的传输特性（如Mux和QUIC）。这种复杂性虽然带来了强大的功能，但也增加了系统依赖度，使得在服务器环境变动时更容易出现兼容性问题。</p>  <p>当服务器重启时，整个系统环境经历了一次"重置"，这个过程中多个环节都可能成为V2Ray失效的潜在诱因。理解这些关键点，才能有的放矢地进行问题排查。</p>  <h2>二、服务器重启导致V2Ray失效的五大核心原因</h2>  <h3>1. 服务自启动配置缺失</h3>  <p>这是最常见的问题根源。许多用户在安装V2Ray后，往往忽略了将其设置为系统服务并配置开机自启动。服务器重启后，V2Ray服务仍处于停止状态，自然无法提供代理功能。</p>  <p><strong>诊断方法：</strong> <code>bash systemctl is-enabled v2ray</code> 若返回"disabled"则表明未设置自启动。</p>  <h3>2. 配置文件加载异常</h3>  <p>V2Ray的核心配置文件（通常位于/etc/v2ray/config.json）可能在重启过程中受损，或由于权限变更导致无法读取。更隐蔽的问题是配置文件存在语法错误，在服务热重启时可能被忽略，但在完全重启后导致服务无法正常加载。</p>  <p><strong>典型症状：</strong> - 服务状态显示为"active (exited)" - 日志中出现"failed to load config"类错误</p>  <h3>3. 网络环境变动</h3>  <p>服务器重启后，以下网络相关因素可能发生变化： - 防火墙规则重置（特别是使用iptables/ufw的情况） - 云服务商安全组策略恢复默认 - 网络接口顺序或IP地址变更 - 路由表更新导致流量走向改变</p>  <h3>4. 端口占用冲突</h3>  <p>某些情况下，服务器重启后其他服务可能优先占用了V2Ray配置的端口。特别是当V2Ray使用常见端口（如443、80）时，这种冲突概率更高。</p>  <p><strong>排查命令：</strong> <code>bash netstat -tulnp | grep &lt;端口号&gt;</code></p>  <h3>5. 依赖服务未就绪</h3>  <p>如果V2Ray配置中使用了数据库、Web API等外部依赖，这些服务启动速度慢于V2Ray时，会导致初始化失败。在Docker等容器化环境中，服务启动顺序问题尤为突出。</p>  <h2>三、系统化解决方案：从诊断到修复</h2>  <h3>第一步：服务状态全面检查</h3>  <p>执行以下命令获取服务完整状态： <code>bash systemctl status v2ray -l</code> 重点关注： - Active状态应为"active (running)" - 日志中无"error"或"failed"关键词 - 服务启动时间应在服务器重启之后</p>  <h3>第二步：配置文件深度验证</h3>  <p>使用V2Ray内置工具验证配置： <code>bash v2ray test -config /etc/v2ray/config.json</code> 同时检查文件权限： <code>bash ls -l /etc/v2ray/config.json</code> 确保v2ray用户有读取权限。</p>  <h3>第三步：网络连通性矩阵测试</h3>  <p>建立完整的网络检查清单： 1. 本地端口监听检测：    <code>bash    ss -ltn | grep &lt;端口&gt;</code> 2. 防火墙规则审核：    <code>bash    iptables -L -n -v</code> 3. 云平台安全组校验（AWS安全组、阿里云安全组等） 4. 外部可达性测试（从另一台机器执行telnet测试）</p>  <h3>第四步：依赖服务拓扑分析</h3>  <p>使用systemd的依赖关系查看工具： <code>bash systemctl list-dependencies v2ray</code> 对于关键依赖服务，可设置延迟启动： <code>ini [Unit] After=network-online.target mysql.service Wants=network-online.target</code></p>  <h2>四、高级防护：构建弹性V2Ray服务架构</h2>  <h3>1. 双配置热备方案</h3>  <p>在主配置旁放置备用配置文件，通过systemd服务脚本实现自动切换： ```bash</p>  <h1>!/bin/bash  <p>if ! v2ray test -config /etc/v2ray/config.json; then     cp /etc/v2ray/config.backup.json /etc/v2ray/config.json     systemctl restart v2ray fi ```</p>  <h3>2. 健康检查与自动恢复</h3>  <p>结合cron实现定时健康检查： <code>bash */5 * * * * if ! curl -x socks5://127.0.0.1:1080 -m 3 example.com; then systemctl restart v2ray; fi</code></p>  <h3>3. 日志智能分析</h3>  <p>配置logrotate实现日志轮转，同时设置关键错误告警： <code>bash grep -E 'error|fail|denied' /var/log/v2ray/error.log | mail -s "V2Ray Alert" admin@example.com</code></p>  <h2>五、经典案例解析</h2>  <p><strong>案例1：</strong> 某用户发现重启后V2Ray无法连接，经排查是云平台安全组在实例重启后恢复了默认设置，导致自定义端口规则丢失。解决方案是在系统启动脚本中加入安全组配置命令。</p>  <p><strong>案例2：</strong> 使用Docker-Compose部署的环境在重启后失效，原因是数据库容器启动耗时较长。通过修改compose文件添加健康检查和依赖关系解决问题： <code>yaml services:   v2ray:     depends_on:       db:         condition: service_healthy</code></p>  <h2>六、终极预防方案</h2>  <ol> <li>将关键配置纳入版本控制系统</li> <li>编写完整的启动前检查脚本</li> <li>使用Configuration as Code工具管理服务器状态</li> <li>定期进行"重启演练"验证系统健壮性</li> </ol>  <h2>专业点评</h2>  <p>服务器重启后服务失效的问题，本质上反映了系统配置的完整性和服务管理的成熟度。V2Ray作为网络代理工具，其运行状态依赖于多个系统层级的正确配合，这包括：</p>  <ol> <li><strong>服务管理层</strong>：systemd单元文件的正确配置决定了服务生命周期的管理质量</li> <li><strong>配置管理层</strong>：配置文件的版本控制、验证机制和备份策略</li> <li><strong>网络管理层</strong>：对现代云环境下网络组件的深刻理解</li> <li><strong>依赖管理层</strong>：微服务架构下的服务依赖关系管理</li> </ol>  <p>真正稳健的系统，应该能够经受住重启这种基础运维操作的考验。本文提供的不仅是一套问题解决方案，更是一种构建可靠服务的思维方式。通过将反应式的问题解决转变为预防式的架构设计，可以显著提升整体系统的可用性水平。记住，好的系统不是没有故障，而是能够自动从故障中恢复。</p> </div>
 <div class="clearfix"></div>
 <div class="col-md-12 mt-5">
-        <p>上一个：<a href="/free-nodes/node-share-links-2026-8-5.htm">8月5日19.8M/S|V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a></p>
         <p>下一个：<a href="/free-nodes/free-ssr-node-2026-8-7.htm">8月7日20.7M/S|SSR节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/Clash节点免费节点每天更新链接地址，便宜机场推荐</a></p>
     </div>
 <h4>FAQ</h4>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 如何实现智能分流？</h5></div>
-    <div class="panel-body">
-        Clash 通过结合规则文件和策略组，可以对不同网站或应用进行智能分流。例如将国内流量直连，海外流量通过代理节点，提高访问速度和稳定性，同时减少不必要的节点占用。<hr />    </div>
-</div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Mihomo 可以同时管理多少节点？</h5></div>
     <div class="panel-body">
         Mihomo 可以管理大量节点，理论上没有固定上限。通过策略组和节点分类，用户可以轻松管理数百个节点，同时进行测速和自动切换。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>如何合理设置 Clash 的 proxy-group 实现自动切换？</h5></div>
+    <div class="panel-heading"><h5>Clash 如何实现智能分流？</h5></div>
     <div class="panel-body">
-        创建包含多个节点的策略组（如 `url-test` 或 `fallback`），设置合适的检测 URL 与检测频率，启用延迟优先或可用性优先策略。这样客户端会自动选择延迟最低或可用节点，提升稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 可以替换 Clash 的 YAML 配置吗？</h5></div>
-    <div class="panel-body">
-        可以。Sing-box 原生支持解析 Clash YAML 配置，并自动转换为自身 JSON 结构。节点和规则基本兼容，但部分脚本和自定义插件可能需要手动调整。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Surfboard 能否同步 iCloud 配置？</h5></div>
-    <div class="panel-body">
-        可以。Surfboard 支持 iCloud 同步功能，用户可在不同苹果设备上共享同一配置文件。这样即使更换手机或重装系统，也能自动恢复节点与分流设置。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Quantumult X 的主要功能是什么？</h5></div>
-    <div class="panel-body">
-        Quantumult X 是一款功能极其强大的 iOS 网络代理应用，支持多种协议和脚本扩展。它可以通过规则分流、广告屏蔽、请求重写等方式优化网络体验。Quantumult X 常被技术用户用于高级自动化与自定义代理策略。<hr />    </div>
+        Clash 通过结合规则文件和策略组，可以对不同网站或应用进行智能分流。例如将国内流量直连，海外流量通过代理节点，提高访问速度和稳定性，同时减少不必要的节点占用。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Sing-box 是否兼容 Clash 配置文件？</h5></div>
@@ -199,9 +178,29 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         部分兼容。Sing-box 支持从 Clash 订阅转换工具导入节点，但配置语法略有不同。建议使用第三方订阅转换器，如 sub-converter，将 Clash 格式转换为 Sing-box JSON 格式使用。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Matsuri 的节点自动测速功能如何配置？</h5></div>
+    <div class="panel-heading"><h5>Surfboard 能否同步 iCloud 配置？</h5></div>
     <div class="panel-body">
-        Matsuri 可以设置测速周期和节点列表，程序会自动测试延迟和速度并排序。用户可根据测试结果选择最佳节点，提高网络访问速度和使用体验。<hr />    </div>
+        可以。Surfboard 支持 iCloud 同步功能，用户可在不同苹果设备上共享同一配置文件。这样即使更换手机或重装系统，也能自动恢复节点与分流设置。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 可以替换 Clash 的 YAML 配置吗？</h5></div>
+    <div class="panel-body">
+        可以。Sing-box 原生支持解析 Clash YAML 配置，并自动转换为自身 JSON 结构。节点和规则基本兼容，但部分脚本和自定义插件可能需要手动调整。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VLESS + Reality 模式如何隐藏流量特征？</h5></div>
+    <div class="panel-body">
+        Reality 模式通过伪装握手和真实网站特征，使流量难以被 DPI 检测。结合策略组使用，可有效隐藏节点通信特征，同时保持安全和高速传输，适合高封锁环境。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>如何合理设置 Clash 的 proxy-group 实现自动切换？</h5></div>
+    <div class="panel-body">
+        创建包含多个节点的策略组（如 `url-test` 或 `fallback`），设置合适的检测 URL 与检测频率，启用延迟优先或可用性优先策略。这样客户端会自动选择延迟最低或可用节点，提升稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Quantumult X 的主要功能是什么？</h5></div>
+    <div class="panel-body">
+        Quantumult X 是一款功能极其强大的 iOS 网络代理应用，支持多种协议和脚本扩展。它可以通过规则分流、广告屏蔽、请求重写等方式优化网络体验。Quantumult X 常被技术用户用于高级自动化与自定义代理策略。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Nekoray 能否同时运行多个代理？</h5></div>
@@ -209,9 +208,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         Nekoray 支持多配置运行。用户可在“多配置模式”下同时开启不同协议或节点的代理，程序会自动创建多个监听端口，方便多应用或分流测试使用。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>VLESS + Reality 模式如何隐藏流量特征？</h5></div>
+    <div class="panel-heading"><h5>Matsuri 的节点自动测速功能如何配置？</h5></div>
     <div class="panel-body">
-        Reality 模式通过伪装握手和真实网站特征，使流量难以被 DPI 检测。结合策略组使用，可有效隐藏节点通信特征，同时保持安全和高速传输，适合高封锁环境。    </div>
+        Matsuri 可以设置测速周期和节点列表，程序会自动测试延迟和速度并排序。用户可根据测试结果选择最佳节点，提高网络访问速度和使用体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -259,16 +258,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-7-16-free-ssr-subscribe.htm" title="7月16日22.3M/S|Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Clash节点免费节点每天更新链接地址，便宜机场推荐">7月16日22.3M/S|Singbox节点/V2ray节点/Shadowrocket节点/SSR节点/Trojan节点/Clash节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-14-free-clash.htm" title="7月14日20.9M/S|Shadowrocket节点/Trojan节点/Singbox节点/Clash节点/V2ray节点/SSR节点免费节点每天更新链接地址，便宜机场推荐">7月14日20.9M/S|Shadowrocket节点/Trojan节点/Singbox节点/Clash节点/V2ray节点/SSR节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/clash-windows-2026-7-29.htm" title="7月29日21.4M/S|Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/SSR节点/Clash节点免费节点每天更新链接地址，便宜机场推荐">7月29日21.4M/S|Shadowrocket节点/Trojan节点/V2ray节点/Singbox节点/SSR节点/Clash节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-26-free-v2ray.htm" title="7月26日18.2M/S|SSR节点/Clash节点/Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点免费节点每天更新链接地址，便宜机场推荐">7月26日18.2M/S|SSR节点/Clash节点/Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-12-free-shadowrocket-node.htm" title="8月12日21.9M/S|Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">8月12日21.9M/S|Clash节点/Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-5.htm" title="8月5日19.8M/S|V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">8月5日19.8M/S|V2ray节点/SSR节点/Clash节点/Shadowrocket节点/Trojan节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-13-node-share-links.htm" title="7月13日22.4M/S|Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐">7月13日22.4M/S|Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-22-free-ssr-subscribe.htm" title="7月22日18.4M/S|Clash节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐">7月22日18.4M/S|Clash节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点/V2ray节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-10-free-clash.htm" title="8月10日20.3M/S|Trojan节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">8月10日20.3M/S|Trojan节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/free-subscribe-node-2026-8-3.htm" title="8月3日20M/S|Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/SSR节点免费节点每天更新链接地址，便宜机场推荐">8月3日20M/S|Clash节点/Singbox节点/Trojan节点/Shadowrocket节点/V2ray节点/SSR节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-9.htm" title="8月9日22.7M/S|Shadowrocket节点/Clash节点/Trojan节点/SSR节点/V2ray节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">8月9日22.7M/S|Shadowrocket节点/Clash节点/Trojan节点/SSR节点/V2ray节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-v2ray-subscribe-2026-8-15.htm" title="8月15日21M/S|V2ray节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐">8月15日21M/S|V2ray节点/SSR节点/Shadowrocket节点/Singbox节点/Clash节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-16-clash-node-daily-updates.htm" title="8月16日18.3M/S|Trojan节点/SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点免费节点每天更新链接地址，便宜机场推荐">8月16日18.3M/S|Trojan节点/SSR节点/Clash节点/V2ray节点/Singbox节点/Shadowrocket节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-ssr-node-2026-8-7.htm" title="8月7日20.7M/S|SSR节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/Clash节点免费节点每天更新链接地址，便宜机场推荐">8月7日20.7M/S|SSR节点/V2ray节点/Trojan节点/Singbox节点/Shadowrocket节点/Clash节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-high-speed-nodes-2026-8-25.htm" title="8月25日19.9M/S|Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点免费节点每天更新链接地址，便宜机场推荐">8月25日19.9M/S|Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点/Clash节点/SSR节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-ssr-node-2026-8-17.htm" title="8月17日21M/S|Trojan节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">8月17日21M/S|Trojan节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-windows-2026-9-1.htm" title="9月1日21.9M/S|Trojan节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐">9月1日21.9M/S|Trojan节点/V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/shadowrocket-node-2026-8-27.htm" title="8月27日21M/S|V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐">8月27日21M/S|V2ray节点/Shadowrocket节点/SSR节点/Clash节点/Singbox节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/clash-windows-2026-8-11.htm" title="8月11日21.4M/S|Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐">8月11日21.4M/S|Shadowrocket节点/SSR节点/Singbox节点/V2ray节点/Clash节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-4-clash-node.htm" title="9月4日21.6M/S|Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐">9月4日21.6M/S|Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点/Trojan节点免费节点每天更新链接地址，便宜机场推荐</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -280,10 +279,10 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">12</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
